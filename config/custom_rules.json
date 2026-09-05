@@ -1,5 +1,7 @@
 {
-  "non_ip_before_remote": [],
+  "non_ip_before_remote": [
+    "PROTOCOL,STUN,REJECT"
+  ],
   "ip_phase": [
     "IP-CIDR,161.33.3.233/32,DIRECT,no-resolve",
     "IP-CIDR,8.216.83.167/32,Game,no-resolve",
@@ -7,13 +9,13 @@
     "IP-CIDR,1.0.0.1/32,Proxy,no-resolve",
     "IP-CIDR,8.8.8.8/32,Proxy,no-resolve",
     "IP-CIDR,8.8.4.4/32,Proxy,no-resolve",
-    "IP-ASN,132203,DIRECT",
-    "IP-ASN,56040,DIRECT",
-    "IP-ASN,45090,DIRECT"
+    "IP-ASN,132203,DIRECT,no-resolve",
+    "IP-ASN,56040,DIRECT,no-resolve",
+    "IP-ASN,45090,DIRECT,no-resolve"
   ],
   "tail": [
     "RULE-SET,LAN,DIRECT",
-    "GEOIP,CN,DIRECT",
+    "GEOIP,CN,DIRECT,no-resolve",
     "FINAL,Final,dns-failed"
   ]
 }
