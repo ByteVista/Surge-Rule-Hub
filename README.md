@@ -128,14 +128,15 @@ Do not edit the embedded rule block in `docs/index.html` manually; it is overwri
 <!-- SURGE_RULE_BLOCK:START -->
 ## 最新 Surge `[Rule]` 配置（Actions 自动更新）
 
-> 本区域由 `scripts/build.py` 在每次 Actions 构建时自动刷新，内容与 `dist/RuleSnippet.conf` 完全一致。请不要手动编辑本区域。
+> 本区域由 GitHub Actions 自动刷新，唯一内容来源是 `dist/RuleSnippet.conf`。请不要手动编辑本区域。
 
-> 最后构建：`2026-09-05T12:37:12Z`
+> 最后构建：`2026-09-05T12:47:19Z` · 来源 Commit：[`c08a9fe`](https://github.com/CINGDAAT/Surge-Rule-Hub/commit/c08a9fea43127d0a2528ef41ae85a414ed2a0d42) · [Actions Run #33967029714](https://github.com/CINGDAAT/Surge-Rule-Hub/actions/runs/33967029714)
 
 GitHub 代码块右上角可直接复制；也可打开 [`docs/RuleSnippet.conf`](docs/RuleSnippet.conf) 查看纯文本。
 
 ```ini
 [Rule]
+# PRE-ACTION LOCAL BUILD: remote mirrors are not populated in this ZIP. Run GitHub Actions before using this file.
 # Generated order: custom domain rules -> all remote non-IP -> custom IP -> all remote IP/ASN -> tail.
 DOMAIN-SUFFIX,skk.moe,🇺🇸Relay
 DOMAIN-SUFFIX,iplark.com,🇺🇸Relay
