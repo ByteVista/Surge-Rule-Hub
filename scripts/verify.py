@@ -22,6 +22,25 @@ for s in services:
 sn=ROOT/'dist'/'RuleSnippet.conf'
 if not sn.exists() or '[Rule]' not in sn.read_text(encoding='utf-8'):
     errors.append('RuleSnippet.conf missing or invalid')
+
+# README must expose the exact latest Surge [Rule] block generated in this run.
+readme=ROOT/'README.md'
+if not readme.exists():
+    errors.append('README.md missing')
+else:
+    rt=readme.read_text(encoding='utf-8')
+    start='<!-- SURGE_RULE_BLOCK:START -->'
+    end='<!-- SURGE_RULE_BLOCK:END -->'
+    if start not in rt or end not in rt:
+        errors.append('README generated Surge rule markers missing')
+    else:
+        section=rt.split(start,1)[1].split(end,1)[0]
+        m=re.search(r'```ini\n(.*?)\n```', section, re.S)
+        if not m:
+            errors.append('README generated Surge rule code block missing')
+        elif sn.exists() and m.group(1).rstrip() != sn.read_text(encoding='utf-8').rstrip():
+            errors.append('README Surge rule block does not match dist/RuleSnippet.conf')
+
 if errors:
     print('\n'.join(errors),file=sys.stderr)
     raise SystemExit(1)
