@@ -1,24 +1,5 @@
 {
-  "non_ip_before_remote": [
-    "DOMAIN-SUFFIX,skk.moe,🇺🇸Relay",
-    "DOMAIN-SUFFIX,iplark.com,🇺🇸Relay",
-    "DOMAIN-SUFFIX,ipcheck.ing,🇺🇸Relay",
-    "DOMAIN,dns.google,Proxy",
-    "DOMAIN,cloudflare-dns.com,Proxy",
-    "DOMAIN-SUFFIX,usaddres.com,DIRECT",
-    "DOMAIN-SUFFIX,daat.eu.org,DIRECT",
-    "DOMAIN-SUFFIX,voxi.co.uk,United Kingdom",
-    "DOMAIN-SUFFIX,redpocket.com,United States",
-    "DOMAIN-SUFFIX,anytimemailbox.com,United States",
-    "DOMAIN-SUFFIX,irs.gov,United States",
-    "DOMAIN,api.lemonsqueezy.com,REJECT",
-    "DOMAIN-SUFFIX,gametrade.jp,Japan",
-    "DOMAIN,prepaid.hkcsl.com,DIRECT",
-    "DOMAIN-SUFFIX,bochk.com,DIRECT",
-    "DOMAIN-SUFFIX,gjfzpt.cn,REJECT",
-    "DOMAIN-SUFFIX,jsdelivr.net,Proxy",
-    "DEST-PORT,123,DIRECT"
-  ],
+  "non_ip_before_remote": [],
   "ip_phase": [
     "IP-CIDR,161.33.3.233/32,DIRECT,no-resolve",
     "IP-CIDR,8.216.83.167/32,Game,no-resolve",
