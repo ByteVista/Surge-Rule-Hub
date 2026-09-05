@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-spec=importlib.util.spec_from_file_location('builder',ROOT/'scripts'/'build.py')
+spec=importlib.util.spec_from_file_location('builder',ROOT/'scripts'/'canonical_build.py')
 b=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(b)
 

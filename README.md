@@ -1,7 +1,7 @@
 # Surge Rule Hub（个人分流规则仓库模板）
 
 
-> **Pipeline package:** V8 canonical-build guard. README sync runs only after `dist/RuleSnippet.conf` has been generated and validated.
+> **Pipeline package:** V9 canonical-build guard. README sync runs only after `dist/RuleSnippet.conf` has been generated and validated.
 
 > 研究/整理日期：2026-08-21。目标不是“规则越少越好”，而是 **基础层控制负载，金融层优先完整覆盖、固定出口和可审计性**。
 
@@ -127,7 +127,7 @@ python3 scripts/select.py moomoo-us coverage-fusion
 
 Every successful Actions build regenerates `docs/index.html` from the same in-memory `RuleSnippet.conf` output. The Pages home page therefore shows the complete latest `[Rule]` block with a one-click copy button, build timestamp, source commit / Actions run metadata when available, plus raw links to `RuleSnippet.conf` and `rule-snippet.txt`.
 
-Do not edit the embedded rule block in `docs/index.html` manually; it is overwritten by `scripts/build.py` on every build.
+Do not edit the embedded rule block in `docs/index.html` manually; it is overwritten by `scripts/canonical_build.py` on every build.
 
 <!-- SURGE_RULE_BLOCK:START -->
 ## 最新 Surge `[Rule]` 配置（Actions 自动更新）

@@ -111,10 +111,10 @@ After a successful run, the Pages home page must show:
 
 If the page still says `local`, `PRE-ACTION LOCAL BUILD`, `WAITING_FOR_FIRST_SUCCESSFUL_ACTIONS_BUILD`, or contains placeholder URLs, you are looking at a pre-build/stale branch deployment. Check `Settings -> Pages -> Source -> GitHub Actions`, then run the workflow again and wait for both the **build** and **deploy** jobs to be green.
 
-## V8 canonical-build guard
+## V9 canonical-build guard
 
-V8 treats `dist/RuleSnippet.conf` as the canonical build artifact. The workflow now checks that this file exists, is non-empty, and contains a `[Rule]` header immediately after `scripts/build.py` finishes. README synchronization only runs after this guard passes.
+V9 treats `dist/RuleSnippet.conf` as the canonical build artifact. The workflow now checks that this file exists, is non-empty, and contains a `[Rule]` header immediately after `scripts/canonical_build.py` finishes. README synchronization only runs after this guard passes.
 
-If the guard reports that the canonical artifact is missing, replace `scripts/build.py`, `scripts/readme_sync.py`, `scripts/verify.py`, and `.github/workflows/sync-rules.yml` together from the same release instead of mixing files from older packages.
+If the guard reports that the canonical artifact is missing, replace `scripts/canonical_build.py`, `scripts/readme_sync.py`, `scripts/verify.py`, and `.github/workflows/sync-rules.yml` together from the same release instead of mixing files from older packages.
 
 The Action log also prints the pipeline version and SHA-256 hashes of the three scripts before building, which makes version-mismatch diagnosis straightforward.

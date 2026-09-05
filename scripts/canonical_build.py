@@ -18,8 +18,8 @@ if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
 ROOT = Path(__file__).resolve().parents[1]
-PIPELINE_VERSION = 'v8'
-BUILD_SENTINEL = 'SURGE_RULE_HUB_CANONICAL_BUILDER_V8'
+PIPELINE_VERSION = 'v9'
+BUILD_SENTINEL = 'SURGE_RULE_HUB_CANONICAL_BUILDER_V9'
 CONFIG = ROOT / 'config'
 MIRROR = ROOT / 'mirror'
 RULES = ROOT / 'rules'
@@ -550,7 +550,7 @@ table{{border-collapse:collapse;width:100%;min-width:820px}} th,td{{border-botto
 
 def main():
     ap=argparse.ArgumentParser(description='Canonical Surge Rule Hub builder')
-    ap.add_argument('--version', action='version', version='surge-rule-hub v8 canonical-builder')
+    ap.add_argument('--version', action='version', version='surge-rule-hub v9 canonical-builder')
     ap.add_argument('--offline', action='store_true', help='use existing mirrors only')
     args=ap.parse_args()
     print(f'[PIPELINE] Surge Rule Hub {PIPELINE_VERSION}: canonical build')

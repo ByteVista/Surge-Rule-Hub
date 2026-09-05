@@ -42,24 +42,28 @@ jobs:
           echo "Repository: $GITHUB_REPOSITORY"
           echo "Commit: $GITHUB_SHA"
           echo "Workflow: .github/workflows/sync-rules.yml"
-          grep -n "PIPELINE_VERSION" scripts/build.py || true
-          sha256sum scripts/build.py scripts/readme_sync.py scripts/verify.py
+          grep -n "PIPELINE_VERSION" scripts/canonical_build.py || true
+          sha256sum scripts/canonical_build.py scripts/readme_sync.py scripts/verify.py
 
       - name: Verify canonical builder identity
         run: |
           set -euo pipefail
-          VERSION="$(python3 scripts/build.py --version)"
+          VERSION="$(python3 scripts/canonical_build.py --version)"
           echo "Builder: $VERSION"
-          if [ "$VERSION" != "surge-rule-hub v8 canonical-builder" ]; then
-            echo "::error title=Wrong scripts/build.py::Expected the V8 canonical builder, but scripts/build.py is another/older script. Replace the repository files as one complete package."
+          if [ "$VERSION" != "surge-rule-hub v9 canonical-builder" ]; then
+            echo "::error title=Wrong scripts/canonical_build.py::Expected the V9 canonical builder, but scripts/canonical_build.py is missing or wrong."
             exit 1
           fi
-          if cmp -s scripts/build.py scripts/select.py; then
-            echo "::error title=build.py is select.py::scripts/build.py and scripts/select.py are identical. The wrong file was uploaded."
+          if [ -e scripts/build.py ]; then
+            echo "::error title=Legacy scripts/build.py must be removed::V9 no longer uses scripts/build.py. Delete it so an old selector/build script cannot cause confusion."
             exit 1
           fi
-          grep -q "SURGE_RULE_HUB_CANONICAL_BUILDER_V8" scripts/build.py
-          python3 -m py_compile scripts/build.py scripts/select.py scripts/readme_sync.py scripts/verify.py
+          if cmp -s scripts/canonical_build.py scripts/select.py; then
+            echo "::error title=canonical_build.py is select.py::scripts/canonical_build.py and scripts/select.py are identical. The wrong file was uploaded."
+            exit 1
+          fi
+          grep -q "SURGE_RULE_HUB_CANONICAL_BUILDER_V9" scripts/canonical_build.py
+          python3 -m py_compile scripts/canonical_build.py scripts/select.py scripts/readme_sync.py scripts/verify.py
 
       - name: Run parser and README tests
         run: python3 -m unittest discover -s tests -v
@@ -69,11 +73,11 @@ jobs:
           PUBLIC_BASE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
         run: |
           set -euo pipefail
-          python3 scripts/build.py
+          python3 scripts/canonical_build.py
 
           echo "--- canonical artifact check ---"
           if [ ! -s dist/RuleSnippet.conf ]; then
-            echo "::error title=Canonical Surge snippet missing::scripts/build.py exited successfully but dist/RuleSnippet.conf is missing or empty. This normally means repository files from different package versions were mixed."
+            echo "::error title=Canonical Surge snippet missing::scripts/canonical_build.py exited successfully but dist/RuleSnippet.conf is missing or empty."
             echo "PWD=$PWD"
             echo "Generated directories:"
             ls -la dist docs rules mirror 2>/dev/null || true

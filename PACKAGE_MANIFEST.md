@@ -10,12 +10,12 @@
 - Structural verifier checks IP/non-IP phase separation.
 
 ### Pages copy panel update
-- `scripts/build.py` now embeds the freshly generated `RuleSnippet.conf` directly into `docs/index.html` on every build.
+- `scripts/canonical_build.py` now embeds the freshly generated `RuleSnippet.conf` directly into `docs/index.html` on every build.
 - `docs/index.html` includes a Copy [Rule] button, build time, source commit / Actions run metadata, and service table.
 - `docs/rule-snippet.txt` is generated alongside `docs/RuleSnippet.conf` as a plain-text copy target.
 
 ### README auto-sync update
-- `scripts/build.py` refreshes a marker-delimited section in `README.md` from the exact same `RuleSnippet.conf` generated in that run.
+- `scripts/canonical_build.py` refreshes a marker-delimited section in `README.md` from the exact same `RuleSnippet.conf` generated in that run.
 - The generated README section includes the complete Surge `[Rule]` block plus build / commit / Actions metadata when available.
 - `scripts/verify.py` fails the workflow if the README code block is missing or differs from `dist/RuleSnippet.conf`.
 - The existing `git add -A -- .` step commits the refreshed README automatically after every successful build.
@@ -38,16 +38,16 @@
 - Parser now preserves `DOMAIN-WILDCARD`, `URL-REGEX`, and external RULE-SET logical `AND/OR/NOT` lines instead of silently dropping them.
 - Local unit tests: 11.
 
-## V8 changes
+## V9 changes
 - canonical build guard requires non-empty `dist/RuleSnippet.conf` before README sync
 - removed duplicate README synchronization from `build.py`; workflow owns the sequence explicitly
 - Action logs pipeline version and script SHA-256 hashes
 - build outputs `pipeline-version.txt` to `dist/` and `docs/`
 
-## V8 builder identity guard
+## V9 builder identity guard
 
-- Canonical build entrypoint: `scripts/build.py`
+- Canonical build entrypoint: `scripts/canonical_build.py`
 - Selector utility: `scripts/select.py`
-- `scripts/build.py --version` must return exactly `surge-rule-hub v8 canonical-builder`.
+- `scripts/canonical_build.py --version` must return exactly `surge-rule-hub v9 canonical-builder`.
 - Actions fails before network fetching if builder/selector files are mixed up.
 - The root-level workflow backup was removed to avoid confusing it with the only active workflow under `.github/workflows/`.
