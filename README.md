@@ -1,7 +1,7 @@
 # Surge Rule Hub（个人分流规则仓库模板）
 
 
-> **Pipeline package:** V7 canonical-build guard. README sync runs only after `dist/RuleSnippet.conf` has been generated and validated.
+> **Pipeline package:** V8 canonical-build guard. README sync runs only after `dist/RuleSnippet.conf` has been generated and validated.
 
 > 研究/整理日期：2026-08-21。目标不是“规则越少越好”，而是 **基础层控制负载，金融层优先完整覆盖、固定出口和可审计性**。
 

@@ -45,6 +45,22 @@ jobs:
           grep -n "PIPELINE_VERSION" scripts/build.py || true
           sha256sum scripts/build.py scripts/readme_sync.py scripts/verify.py
 
+      - name: Verify canonical builder identity
+        run: |
+          set -euo pipefail
+          VERSION="$(python3 scripts/build.py --version)"
+          echo "Builder: $VERSION"
+          if [ "$VERSION" != "surge-rule-hub v8 canonical-builder" ]; then
+            echo "::error title=Wrong scripts/build.py::Expected the V8 canonical builder, but scripts/build.py is another/older script. Replace the repository files as one complete package."
+            exit 1
+          fi
+          if cmp -s scripts/build.py scripts/select.py; then
+            echo "::error title=build.py is select.py::scripts/build.py and scripts/select.py are identical. The wrong file was uploaded."
+            exit 1
+          fi
+          grep -q "SURGE_RULE_HUB_CANONICAL_BUILDER_V8" scripts/build.py
+          python3 -m py_compile scripts/build.py scripts/select.py scripts/readme_sync.py scripts/verify.py
+
       - name: Run parser and README tests
         run: python3 -m unittest discover -s tests -v
 

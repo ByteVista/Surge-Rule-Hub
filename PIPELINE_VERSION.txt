@@ -1,0 +1,4 @@
+Surge Rule Hub pipeline: v8
+Canonical builder: scripts/build.py
+Expected version output: surge-rule-hub v8 canonical-builder
+Workflow: .github/workflows/sync-rules.yml

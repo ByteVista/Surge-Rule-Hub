@@ -38,8 +38,16 @@
 - Parser now preserves `DOMAIN-WILDCARD`, `URL-REGEX`, and external RULE-SET logical `AND/OR/NOT` lines instead of silently dropping them.
 - Local unit tests: 11.
 
-## V7 changes
+## V8 changes
 - canonical build guard requires non-empty `dist/RuleSnippet.conf` before README sync
 - removed duplicate README synchronization from `build.py`; workflow owns the sequence explicitly
 - Action logs pipeline version and script SHA-256 hashes
 - build outputs `pipeline-version.txt` to `dist/` and `docs/`
+
+## V8 builder identity guard
+
+- Canonical build entrypoint: `scripts/build.py`
+- Selector utility: `scripts/select.py`
+- `scripts/build.py --version` must return exactly `surge-rule-hub v8 canonical-builder`.
+- Actions fails before network fetching if builder/selector files are mixed up.
+- The root-level workflow backup was removed to avoid confusing it with the only active workflow under `.github/workflows/`.
