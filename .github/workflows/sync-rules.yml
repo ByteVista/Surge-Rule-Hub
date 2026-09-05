@@ -2,43 +2,48 @@ name: Sync and Build Surge Rules
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '37 */6 * * *'
   push:
-    branches: [main, master]
+    branches:
+      - main
+      - master
     paths:
       - 'config/**'
       - 'scripts/**'
+      - 'tests/**'
       - '.github/workflows/sync-rules.yml'
-  schedule:
-    - cron: '37 */6 * * *'
 
 permissions:
   contents: write
+  actions: read
   pages: write
   id-token: write
 
 concurrency:
-  group: pages
+  group: surge-rule-hub-pages
   cancel-in-progress: false
 
 jobs:
   build:
+    name: Sync rules and build Pages
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.12'
 
-      - name: Mirror, convert, merge and split
-        run: |
-          export PUBLIC_BASE_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}"
-          python3 scripts/build.py
+      - name: Run parser tests
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Mirror, convert, merge and build
+        env:
+          PUBLIC_BASE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+        run: python3 scripts/build.py
 
       - name: Verify generated rules
         run: python3 scripts/verify.py
@@ -47,20 +52,31 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add mirror rules dist docs
+          # Stage all changes produced by this clean CI checkout.
+          # Do not name mirror/ explicitly: an empty untracked directory makes
+          # `git add mirror` fail with "pathspec did not match any files".
+          git add -A -- .
           if ! git diff --cached --quiet; then
             git commit -m "chore: sync upstream rules"
             git push
           fi
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v6
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: docs
 
-      - name: Deploy Pages
+  deploy:
+    name: Deploy GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
