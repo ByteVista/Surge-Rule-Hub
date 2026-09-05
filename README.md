@@ -1,3 +1,4 @@
+[README.md](https://github.com/user-attachments/files/31863994/README.md)
 # Surge Rule Hub（个人分流规则仓库模板）
 
 > 研究/整理日期：2026-08-21。目标不是“规则越少越好”，而是 **基础层控制负载，金融层优先完整覆盖、固定出口和可审计性**。
@@ -33,7 +34,9 @@
 
 ## 上传与启用
 
-1. 在 GitHub 新建仓库（建议 Private），把本 ZIP 解压后的**仓库内容**上传到仓库根目录。
+1. 在 GitHub 新建仓库（建议 Private），把本 ZIP 解压后的**仓库内容**上传到仓库根目录。**必须确认 `.github/workflows/sync-rules.yml` 也已上传；macOS Finder 默认会隐藏 `.github`。**
+   - 最稳妥的方法是使用 `git add -A` / `git push` 上传。
+   - 如果只用 GitHub 网页上传，请先看 `SETUP_ACTIONS.md`；根目录另附 `SYNC_RULES_WORKFLOW.yml` 作为可见备份。
 2. 打开 `Settings -> Actions -> General`，确保 Actions 可运行且 Workflow 有写权限。
 3. 如果你的 GitHub 套餐允许私有仓库使用 Pages：在 `Settings -> Pages` 选择 **GitHub Actions** 作为 Source。
 4. 进入 `Actions -> Sync and Build Surge Rules -> Run workflow`，第一次务必手动跑一次。
@@ -90,7 +93,7 @@ python3 scripts/select.py moomoo-us coverage-fusion
 4. 自动拆 `non_ip` 和 `ip`；
 5. 只把**实际非空**的远程规则写进 `[Rule]`，避免空 RULE-SET 带来的多余请求；
 6. 校验相位错误；
-7. 提交 mirror/rules/dist/docs；
+7. 提交 mirror/rules/dist/docs，并同步刷新 README 中的最新 Surge `[Rule]` 配置；
 8. 部署 Pages。
 
 第一次运行没有 last-known-good mirror，如果 active 上游拉取失败会直接失败，而不是生成残缺金融规则。
@@ -121,3 +124,58 @@ python3 scripts/select.py moomoo-us coverage-fusion
 Every successful Actions build regenerates `docs/index.html` from the same in-memory `RuleSnippet.conf` output. The Pages home page therefore shows the complete latest `[Rule]` block with a one-click copy button, build timestamp, source commit / Actions run metadata when available, plus raw links to `RuleSnippet.conf` and `rule-snippet.txt`.
 
 Do not edit the embedded rule block in `docs/index.html` manually; it is overwritten by `scripts/build.py` on every build.
+
+<!-- SURGE_RULE_BLOCK:START -->
+## 最新 Surge `[Rule]` 配置（Actions 自动更新）
+
+> 本区域由 `scripts/build.py` 在每次 Actions 构建时自动刷新，内容与 `dist/RuleSnippet.conf` 完全一致。请不要手动编辑本区域。
+
+> 最后构建：`2026-09-05T12:37:12Z`
+
+GitHub 代码块右上角可直接复制；也可打开 [`docs/RuleSnippet.conf`](docs/RuleSnippet.conf) 查看纯文本。
+
+```ini
+[Rule]
+# Generated order: custom domain rules -> all remote non-IP -> custom IP -> all remote IP/ASN -> tail.
+DOMAIN-SUFFIX,skk.moe,🇺🇸Relay
+DOMAIN-SUFFIX,iplark.com,🇺🇸Relay
+DOMAIN-SUFFIX,ipcheck.ing,🇺🇸Relay
+DOMAIN,dns.google,Proxy
+DOMAIN,cloudflare-dns.com,Proxy
+DOMAIN-SUFFIX,usaddres.com,DIRECT
+DOMAIN-SUFFIX,daat.eu.org,DIRECT
+DOMAIN-SUFFIX,voxi.co.uk,United Kingdom
+DOMAIN-SUFFIX,redpocket.com,United States
+DOMAIN-SUFFIX,anytimemailbox.com,United States
+DOMAIN-SUFFIX,irs.gov,United States
+DOMAIN,api.lemonsqueezy.com,REJECT
+DOMAIN-SUFFIX,gametrade.jp,Japan
+DOMAIN,prepaid.hkcsl.com,DIRECT
+DOMAIN-SUFFIX,bochk.com,DIRECT
+DOMAIN-SUFFIX,gjfzpt.cn,REJECT
+DOMAIN-SUFFIX,jsdelivr.net,Proxy
+DEST-PORT,123,DIRECT
+
+# ===== Remote non-IP rules =====
+# > iFAST [official-manual]
+RULE-SET,https://<GITHUB_USER>.github.io/<REPO>/rules/ifast-direct.non_ip.list,DIRECT,extended-matching
+
+# ===== Local/custom IP rules =====
+IP-CIDR,161.33.3.233/32,DIRECT,no-resolve
+IP-CIDR,8.216.83.167/32,Game,no-resolve
+IP-CIDR,1.1.1.1/32,Proxy,no-resolve
+IP-CIDR,1.0.0.1/32,Proxy,no-resolve
+IP-CIDR,8.8.8.8/32,Proxy,no-resolve
+IP-CIDR,8.8.4.4/32,Proxy,no-resolve
+IP-ASN,132203,DIRECT
+IP-ASN,56040,DIRECT
+IP-ASN,45090,DIRECT
+
+# ===== Remote IP / ASN rules =====
+
+# ===== Tail =====
+RULE-SET,LAN,DIRECT
+GEOIP,CN,DIRECT
+FINAL,Final,dns-failed
+```
+<!-- SURGE_RULE_BLOCK:END -->
