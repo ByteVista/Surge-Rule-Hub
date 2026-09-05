@@ -134,7 +134,7 @@ Do not edit the embedded rule block in `docs/index.html` manually; it is overwri
 
 > 本区域由 GitHub Actions 自动刷新，唯一内容来源是 `dist/RuleSnippet.conf`。请不要手动编辑本区域。
 
-> 最后构建：`2026-09-05T14:21:13Z` · 来源 Commit：[`3c8e093`](https://github.com/CINGDAAT/Surge-Rule-Hub/commit/3c8e0931a7809728bcfb946d30a3482c78f25530) · [Actions Run #33971522213](https://github.com/CINGDAAT/Surge-Rule-Hub/actions/runs/33971522213)
+> 最后构建：`2026-09-05T14:21:48Z` · 来源 Commit：[`da4ed78`](https://github.com/CINGDAAT/Surge-Rule-Hub/commit/da4ed78c976d3547fa41470b76c7d381730fc392) · [Actions Run #33971572028](https://github.com/CINGDAAT/Surge-Rule-Hub/actions/runs/33971572028)
 
 GitHub 代码块右上角可直接复制；也可打开 [`docs/RuleSnippet.conf`](docs/RuleSnippet.conf) 查看纯文本。
 
@@ -169,8 +169,6 @@ RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/reject-no-drop.non_ip.l
 RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/reject-drop.non_ip.list,REJECT-DROP,extended-matching
 # > Speedtest [sukka]
 RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/speedtest.non_ip.list,SpeedTest,extended-matching
-# > YouTube [rulego]
-RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/youtube.non_ip.list,Streaming,extended-matching
 # > Static CDN [sukka]
 RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/cdn.non_ip.list,Proxy,extended-matching
 # > iCloud Private Relay [sukka]
@@ -189,6 +187,8 @@ RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/apple-cdn.non_ip.list,A
 RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/apple-domain.non_ip.list,Apple,extended-matching
 # > Microsoft [sukka]
 RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/microsoft.non_ip.list,Microsoft,extended-matching
+# > YouTube [rulego]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/youtube.non_ip.list,Streaming,extended-matching
 # > Google [v2fly]
 RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/google.non_ip.list,Google,extended-matching
 # > AI [sukka]
