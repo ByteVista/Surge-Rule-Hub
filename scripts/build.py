@@ -372,6 +372,52 @@ def build_snippet(services_cfg, custom, report, mac_telegram_failclosed=False):
     return '\n'.join(lines)+'\n'
 
 
+README_RULE_START = '<!-- SURGE_RULE_BLOCK:START -->'
+README_RULE_END = '<!-- SURGE_RULE_BLOCK:END -->'
+
+
+def update_readme(snippet):
+    """Replace only the generated Surge [Rule] block in README.md."""
+    path = ROOT / 'README.md'
+    original = path.read_text(encoding='utf-8') if path.exists() else '# Surge Rule Hub\n'
+
+    build_time = datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
+    sha = os.environ.get('GITHUB_SHA', '').strip()
+    repo = os.environ.get('GITHUB_REPOSITORY', '').strip()
+    run_id = os.environ.get('GITHUB_RUN_ID', '').strip()
+    server = os.environ.get('GITHUB_SERVER_URL', 'https://github.com').rstrip('/')
+
+    meta = [f'最后构建：`{build_time}`']
+    if sha and repo:
+        short_sha = sha[:7]
+        meta.append(f'来源 Commit：[`{short_sha}`]({server}/{repo}/commit/{sha})')
+    if run_id and repo:
+        meta.append(f'[Actions Run #{run_id}]({server}/{repo}/actions/runs/{run_id})')
+
+    block = (
+        f'{README_RULE_START}\n'
+        '## 最新 Surge `[Rule]` 配置（Actions 自动更新）\n\n'
+        '> 本区域由 `scripts/build.py` 在每次 Actions 构建时自动刷新，内容与 '
+        '`dist/RuleSnippet.conf` 完全一致。请不要手动编辑本区域。\n\n'
+        + '> ' + ' · '.join(meta) + '\n\n'
+        'GitHub 代码块右上角可直接复制；也可打开 [`docs/RuleSnippet.conf`](docs/RuleSnippet.conf) 查看纯文本。\n\n'
+        '```ini\n'
+        + snippet.rstrip() + '\n'
+        '```\n'
+        f'{README_RULE_END}'
+    )
+
+    pattern = re.compile(
+        re.escape(README_RULE_START) + r'.*?' + re.escape(README_RULE_END),
+        flags=re.S,
+    )
+    if pattern.search(original):
+        updated = pattern.sub(lambda _: block, original)
+    else:
+        updated = original.rstrip() + '\n\n' + block + '\n'
+    atomic_write(path, updated if updated.endswith('\n') else updated + '\n')
+
+
 def write_general_presets():
     recommended='''# Merge these keys into your existing [General] section; do NOT add a second [General] section.
 hijack-dns = *:53
@@ -553,6 +599,7 @@ def main():
     atomic_write(DOCS/'rule-snippet.txt', snippet)
     atomic_write(DIST/'RuleSnippet-Mac.conf', mac_snippet)
     atomic_write(DOCS/'RuleSnippet-Mac.conf', mac_snippet)
+    update_readme(snippet)
     write_general_presets()
     atomic_write(DIST/'build-report.json', json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     generate_index(services_cfg, report, snippet)
