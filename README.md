@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/31863994/README.md)
 # Surge Rule Hub（个人分流规则仓库模板）
 
 > 研究/整理日期：2026-08-21。目标不是“规则越少越好”，而是 **基础层控制负载，金融层优先完整覆盖、固定出口和可审计性**。
@@ -40,7 +39,7 @@
 2. 打开 `Settings -> Actions -> General`，确保 Actions 可运行且 Workflow 有写权限。
 3. 如果你的 GitHub 套餐允许私有仓库使用 Pages：在 `Settings -> Pages` 选择 **GitHub Actions** 作为 Source。
 4. 进入 `Actions -> Sync and Build Surge Rules -> Run workflow`，第一次务必手动跑一次。
-5. Actions 成功后，打开 Pages 首页确认规则条数不为 0，再使用页面上的 `RuleSnippet.conf`。
+5. **只有 Actions 全部绿色成功后**再使用 Pages/README 中的规则。V6 起，只要任一 active 上游抓取失败、解析为 0，或任一启用服务最终为 0 条，构建会直接失败，绝不会发布 empty 规则。
 6. 将 `dist/General-Recommended.conf` 中的键**合并到已有 `[General]`**，不要创建第二个 `[General]`。
 
 ### GitHub Pages 与“私有仓库”的重要区别
@@ -92,11 +91,13 @@ python3 scripts/select.py moomoo-us coverage-fusion
 3. 转换、过滤、合并、去重；
 4. 自动拆 `non_ip` 和 `ip`；
 5. 只把**实际非空**的远程规则写进 `[Rule]`，避免空 RULE-SET 带来的多余请求；
-6. 校验相位错误；
+6. 校验相位错误，并强制检查所有 active source / service 均非空；
 7. 提交 mirror/rules/dist/docs，并同步刷新 README 中的最新 Surge `[Rule]` 配置；
 8. 部署 Pages。
 
 第一次运行没有 last-known-good mirror，如果 active 上游拉取失败会直接失败，而不是生成残缺金融规则。
+
+**V6 额外保护：**远端返回了 HTML/错误页、格式变化导致解析为 0、或过滤后某个 active 服务变成 0 条，同样直接失败；成功状态意味着所有 48 个启用服务至少有一条有效规则。
 
 ## 当前预选（不是最终定案）
 
@@ -128,55 +129,11 @@ Do not edit the embedded rule block in `docs/index.html` manually; it is overwri
 <!-- SURGE_RULE_BLOCK:START -->
 ## 最新 Surge `[Rule]` 配置（Actions 自动更新）
 
-> 本区域由 GitHub Actions 自动刷新，唯一内容来源是 `dist/RuleSnippet.conf`。请不要手动编辑本区域。
-
-> 最后构建：`2026-09-05T12:48:49Z` · 来源 Commit：[`23207f9`](https://github.com/CINGDAAT/Surge-Rule-Hub/commit/23207f9b1e6da19078778f1dd4f6c0e53da34f45) · [Actions Run #33967096085](https://github.com/CINGDAAT/Surge-Rule-Hub/actions/runs/33967096085)
-
-GitHub 代码块右上角可直接复制；也可打开 [`docs/RuleSnippet.conf`](docs/RuleSnippet.conf) 查看纯文本。
+> 尚未完成第一次成功的 GitHub Actions 远程构建。
+> 请运行 `Actions -> Sync and Build Surge Rules -> Run workflow`。成功后，本区域会自动替换为完整 `[Rule]`。
 
 ```ini
 [Rule]
-# PRE-ACTION LOCAL BUILD: remote mirrors are not populated in this ZIP. Run GitHub Actions before using this file.
-# Generated order: custom domain rules -> all remote non-IP -> custom IP -> all remote IP/ASN -> tail.
-DOMAIN-SUFFIX,skk.moe,🇺🇸Relay
-DOMAIN-SUFFIX,iplark.com,🇺🇸Relay
-DOMAIN-SUFFIX,ipcheck.ing,🇺🇸Relay
-DOMAIN,dns.google,Proxy
-DOMAIN,cloudflare-dns.com,Proxy
-DOMAIN-SUFFIX,usaddres.com,DIRECT
-DOMAIN-SUFFIX,daat.eu.org,DIRECT
-DOMAIN-SUFFIX,voxi.co.uk,United Kingdom
-DOMAIN-SUFFIX,redpocket.com,United States
-DOMAIN-SUFFIX,anytimemailbox.com,United States
-DOMAIN-SUFFIX,irs.gov,United States
-DOMAIN,api.lemonsqueezy.com,REJECT
-DOMAIN-SUFFIX,gametrade.jp,Japan
-DOMAIN,prepaid.hkcsl.com,DIRECT
-DOMAIN-SUFFIX,bochk.com,DIRECT
-DOMAIN-SUFFIX,gjfzpt.cn,REJECT
-DOMAIN-SUFFIX,jsdelivr.net,Proxy
-DEST-PORT,123,DIRECT
-
-# ===== Remote non-IP rules =====
-# > iFAST [official-manual]
-RULE-SET,https://<GITHUB_USER>.github.io/<REPO>/rules/ifast-direct.non_ip.list,DIRECT,extended-matching
-
-# ===== Local/custom IP rules =====
-IP-CIDR,161.33.3.233/32,DIRECT,no-resolve
-IP-CIDR,8.216.83.167/32,Game,no-resolve
-IP-CIDR,1.1.1.1/32,Proxy,no-resolve
-IP-CIDR,1.0.0.1/32,Proxy,no-resolve
-IP-CIDR,8.8.8.8/32,Proxy,no-resolve
-IP-CIDR,8.8.4.4/32,Proxy,no-resolve
-IP-ASN,132203,DIRECT
-IP-ASN,56040,DIRECT
-IP-ASN,45090,DIRECT
-
-# ===== Remote IP / ASN rules =====
-
-# ===== Tail =====
-RULE-SET,LAN,DIRECT
-GEOIP,CN,DIRECT
-FINAL,Final,dns-failed
+# WAITING_FOR_FIRST_SUCCESSFUL_ACTIONS_BUILD
 ```
 <!-- SURGE_RULE_BLOCK:END -->
