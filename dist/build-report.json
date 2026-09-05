@@ -1,0 +1,808 @@
+{
+  "pipeline_version": "v9",
+  "sources": {
+    "awa_ads": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 902,
+      "bytes": 25451
+    },
+    "sukka_reject_no_drop": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 46,
+      "bytes": 1908
+    },
+    "sukka_reject_drop": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 29,
+      "bytes": 1360
+    },
+    "sukka_speedtest_domainset": {
+      "status": "ok",
+      "format": "domainset",
+      "parsed_rules": 3369,
+      "bytes": 86646
+    },
+    "sukka_cdn_domainset": {
+      "status": "ok",
+      "format": "domainset",
+      "parsed_rules": 4654,
+      "bytes": 89161
+    },
+    "sukka_cdn_non_ip": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 84,
+      "bytes": 3447
+    },
+    "sukka_icloud_private_relay": {
+      "status": "ok",
+      "format": "domainset",
+      "parsed_rules": 7,
+      "bytes": 611
+    },
+    "sukka_apple_intelligence": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 6,
+      "bytes": 631
+    },
+    "sukka_microsoft_cdn": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 54,
+      "bytes": 3113
+    },
+    "sukka_microsoft": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 84,
+      "bytes": 2714
+    },
+    "sukka_ai": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 51,
+      "bytes": 1986
+    },
+    "sukka_telegram_non_ip": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 15,
+      "bytes": 834
+    },
+    "sukka_telegram_ip": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 15,
+      "bytes": 1116
+    },
+    "sukka_telegram_asn": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 6,
+      "bytes": 685
+    },
+    "sukka_stream_non_ip": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 336,
+      "bytes": 10487
+    },
+    "sukka_stream_ip": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 20,
+      "bytes": 1869
+    },
+    "sukka_download_domainset": {
+      "status": "ok",
+      "format": "domainset",
+      "parsed_rules": 1967,
+      "bytes": 45688
+    },
+    "sukka_download_non_ip": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 11,
+      "bytes": 874
+    },
+    "sukka_global": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 1270,
+      "bytes": 33238
+    },
+    "sukka_domestic": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 869,
+      "bytes": 22632
+    },
+    "sukka_direct": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 220,
+      "bytes": 6317
+    },
+    "sukka_domestic_ip": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 3,
+      "bytes": 566
+    },
+    "sukka_china_ip": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 3904,
+      "bytes": 92465
+    },
+    "sukka_china_ip6": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 3396,
+      "bytes": 87555
+    },
+    "elysian_apple_update": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 19,
+      "bytes": 1002
+    },
+    "elysian_apple_no_cn_cdn": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 43,
+      "bytes": 1969
+    },
+    "elysian_apple_api_domain": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 33,
+      "bytes": 1608
+    },
+    "elysian_apple_api_ip": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 10,
+      "bytes": 343
+    },
+    "elysian_apple_cdn_domain": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 36,
+      "bytes": 1907
+    },
+    "elysian_apple_domain": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 43,
+      "bytes": 1692
+    },
+    "rulego_ai": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 74,
+      "bytes": 2560
+    },
+    "rulego_wechat": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 18,
+      "bytes": 816
+    },
+    "rulego_x": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 10,
+      "bytes": 245
+    },
+    "rulego_youtube": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 12,
+      "bytes": 348
+    },
+    "rulego_stream_cn": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 242,
+      "bytes": 7796
+    },
+    "rulego_proxy_plus": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 1,
+      "bytes": 32
+    },
+    "v2_google": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 934,
+      "bytes": 12516
+    },
+    "v2_twitter": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 23,
+      "bytes": 327
+    },
+    "v2_youtube": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 176,
+      "bytes": 2444
+    },
+    "v2_spotify": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 25,
+      "bytes": 676
+    },
+    "v2_paypal": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 233,
+      "bytes": 4320
+    },
+    "v2_wise": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 2,
+      "bytes": 26
+    },
+    "v2_n26": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 3,
+      "bytes": 30
+    },
+    "v2_futu": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 21,
+      "bytes": 303
+    },
+    "v2_ibkr": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 21,
+      "bytes": 358
+    },
+    "ibkr_gist": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 15,
+      "bytes": 1183
+    },
+    "v2_binance": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 45,
+      "bytes": 674
+    },
+    "v2_bybit": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 16,
+      "bytes": 214
+    },
+    "v2_okx": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 9,
+      "bytes": 139
+    },
+    "v2_kraken": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 2,
+      "bytes": 22
+    },
+    "accademia_bank_us": {
+      "status": "ok",
+      "format": "clash-classical",
+      "parsed_rules": 46,
+      "bytes": 5128
+    },
+    "accademia_paypal": {
+      "status": "ok",
+      "format": "clash-classical",
+      "parsed_rules": 3,
+      "bytes": 244
+    },
+    "accademia_wise": {
+      "status": "ok",
+      "format": "clash-classical",
+      "parsed_rules": 2,
+      "bytes": 196
+    },
+    "accademia_revolut": {
+      "status": "ok",
+      "format": "clash-classical",
+      "parsed_rules": 3,
+      "bytes": 247
+    },
+    "accademia_monzo": {
+      "status": "ok",
+      "format": "clash-classical",
+      "parsed_rules": 4,
+      "bytes": 297
+    },
+    "sarkrui_us_bank": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 104,
+      "bytes": 3156
+    },
+    "cj_salute_profile": {
+      "status": "ok",
+      "format": "surge-profile",
+      "parsed_rules": 0,
+      "bytes": 120325
+    },
+    "arthur_broker": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 151,
+      "bytes": 4853
+    },
+    "quixotic_crypto": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 416,
+      "bytes": 11299
+    },
+    "lm_hoyoverse": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 10,
+      "bytes": 424
+    },
+    "bm_google": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 703,
+      "bytes": 19985
+    },
+    "bm_spotify": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 31,
+      "bytes": 1246
+    },
+    "bm_nintendo": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 126,
+      "bytes": 4120
+    },
+    "bm_epic": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 15,
+      "bytes": 588
+    },
+    "bm_steam": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 54,
+      "bytes": 2055
+    },
+    "wifi_calling_us": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 24,
+      "bytes": 1114
+    },
+    "wifi_calling_uk": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 28,
+      "bytes": 1321
+    },
+    "wifi_calling_hk": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 16,
+      "bytes": 843
+    },
+    "manual_ifast": {
+      "status": "ok",
+      "format": "manual",
+      "parsed_rules": 18,
+      "bytes": 538
+    },
+    "manual_custom_direct": {
+      "status": "ok",
+      "format": "manual",
+      "parsed_rules": 2,
+      "bytes": 54
+    },
+    "v2_nintendo": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 112,
+      "bytes": 2406
+    },
+    "v2_steam": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 43,
+      "bytes": 1674
+    },
+    "v2_epicgames": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 30,
+      "bytes": 615
+    },
+    "cingdaat_gi_zzz": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 16,
+      "bytes": 739
+    },
+    "cingdaat_genshin": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 8,
+      "bytes": 282
+    }
+  },
+  "active_sources": [
+    "accademia_bank_us",
+    "accademia_monzo",
+    "accademia_paypal",
+    "accademia_revolut",
+    "accademia_wise",
+    "arthur_broker",
+    "awa_ads",
+    "elysian_apple_api_domain",
+    "elysian_apple_api_ip",
+    "elysian_apple_cdn_domain",
+    "elysian_apple_domain",
+    "elysian_apple_no_cn_cdn",
+    "elysian_apple_update",
+    "ibkr_gist",
+    "lm_hoyoverse",
+    "manual_ifast",
+    "rulego_stream_cn",
+    "rulego_wechat",
+    "rulego_youtube",
+    "sarkrui_us_bank",
+    "sukka_ai",
+    "sukka_apple_intelligence",
+    "sukka_cdn_domainset",
+    "sukka_cdn_non_ip",
+    "sukka_china_ip",
+    "sukka_china_ip6",
+    "sukka_direct",
+    "sukka_domestic",
+    "sukka_domestic_ip",
+    "sukka_download_domainset",
+    "sukka_download_non_ip",
+    "sukka_global",
+    "sukka_icloud_private_relay",
+    "sukka_microsoft",
+    "sukka_microsoft_cdn",
+    "sukka_reject_drop",
+    "sukka_reject_no_drop",
+    "sukka_speedtest_domainset",
+    "sukka_stream_ip",
+    "sukka_stream_non_ip",
+    "sukka_telegram_asn",
+    "sukka_telegram_ip",
+    "sukka_telegram_non_ip",
+    "v2_binance",
+    "v2_bybit",
+    "v2_epicgames",
+    "v2_futu",
+    "v2_google",
+    "v2_ibkr",
+    "v2_kraken",
+    "v2_n26",
+    "v2_nintendo",
+    "v2_okx",
+    "v2_paypal",
+    "v2_spotify",
+    "v2_steam",
+    "v2_twitter",
+    "v2_wise",
+    "wifi_calling_hk",
+    "wifi_calling_uk",
+    "wifi_calling_us"
+  ],
+  "services": {
+    "ads": {
+      "active": "awa",
+      "non_ip": 902,
+      "ip": 0,
+      "total": 902
+    },
+    "reject-no-drop": {
+      "active": "sukka",
+      "non_ip": 46,
+      "ip": 0,
+      "total": 46
+    },
+    "reject-drop": {
+      "active": "sukka",
+      "non_ip": 29,
+      "ip": 0,
+      "total": 29
+    },
+    "speedtest": {
+      "active": "sukka",
+      "non_ip": 3368,
+      "ip": 0,
+      "total": 3368
+    },
+    "cdn": {
+      "active": "sukka",
+      "non_ip": 4737,
+      "ip": 0,
+      "total": 4737
+    },
+    "apple-private-relay": {
+      "active": "sukka",
+      "non_ip": 7,
+      "ip": 0,
+      "total": 7
+    },
+    "apple-intelligence": {
+      "active": "sukka",
+      "non_ip": 6,
+      "ip": 0,
+      "total": 6
+    },
+    "apple-update": {
+      "active": "elysian",
+      "non_ip": 19,
+      "ip": 0,
+      "total": 19
+    },
+    "apple-no-cn-cdn": {
+      "active": "elysian",
+      "non_ip": 43,
+      "ip": 0,
+      "total": 43
+    },
+    "apple-api": {
+      "active": "elysian",
+      "non_ip": 33,
+      "ip": 10,
+      "total": 43
+    },
+    "apple-cdn": {
+      "active": "elysian",
+      "non_ip": 36,
+      "ip": 0,
+      "total": 36
+    },
+    "apple-domain": {
+      "active": "elysian",
+      "non_ip": 43,
+      "ip": 0,
+      "total": 43
+    },
+    "microsoft": {
+      "active": "sukka",
+      "non_ip": 137,
+      "ip": 0,
+      "total": 137
+    },
+    "google": {
+      "active": "v2fly",
+      "non_ip": 934,
+      "ip": 0,
+      "total": 934
+    },
+    "ai": {
+      "active": "sukka",
+      "non_ip": 51,
+      "ip": 0,
+      "total": 51
+    },
+    "us-banks": {
+      "active": "fusion",
+      "non_ip": 85,
+      "ip": 0,
+      "total": 85
+    },
+    "payments-us": {
+      "active": "fusion",
+      "non_ip": 254,
+      "ip": 0,
+      "total": 254
+    },
+    "wise-direct": {
+      "active": "fusion",
+      "non_ip": 3,
+      "ip": 0,
+      "total": 3
+    },
+    "n26-france": {
+      "active": "v2fly",
+      "non_ip": 3,
+      "ip": 0,
+      "total": 3
+    },
+    "ifast-direct": {
+      "active": "official-manual",
+      "non_ip": 18,
+      "ip": 0,
+      "total": 18
+    },
+    "moomoo-us": {
+      "active": "v2fly-brand",
+      "non_ip": 3,
+      "ip": 0,
+      "total": 3
+    },
+    "broker-us": {
+      "active": "arthur-domain-clean",
+      "non_ip": 84,
+      "ip": 0,
+      "total": 84
+    },
+    "ibkr-us": {
+      "active": "fusion",
+      "non_ip": 27,
+      "ip": 0,
+      "total": 27
+    },
+    "bybit-eu": {
+      "active": "v2fly+sukka",
+      "non_ip": 16,
+      "ip": 0,
+      "total": 16
+    },
+    "binance-us": {
+      "active": "v2fly+sukka",
+      "non_ip": 45,
+      "ip": 0,
+      "total": 45
+    },
+    "okx-us": {
+      "active": "v2fly+sukka",
+      "non_ip": 10,
+      "ip": 0,
+      "total": 10
+    },
+    "kraken-us": {
+      "active": "v2fly+sukka",
+      "non_ip": 2,
+      "ip": 0,
+      "total": 2
+    },
+    "coinbase-us": {
+      "active": "sukka-extract",
+      "non_ip": 1,
+      "ip": 0,
+      "total": 1
+    },
+    "crypto-com-us": {
+      "active": "sukka-extract",
+      "non_ip": 1,
+      "ip": 0,
+      "total": 1
+    },
+    "hoyoverse": {
+      "active": "lm",
+      "non_ip": 10,
+      "ip": 0,
+      "total": 10
+    },
+    "nintendo": {
+      "active": "v2fly",
+      "non_ip": 112,
+      "ip": 0,
+      "total": 112
+    },
+    "epic": {
+      "active": "v2fly",
+      "non_ip": 30,
+      "ip": 0,
+      "total": 30
+    },
+    "steam": {
+      "active": "v2fly",
+      "non_ip": 43,
+      "ip": 0,
+      "total": 43
+    },
+    "wifi-calling-us": {
+      "active": "henry",
+      "non_ip": 19,
+      "ip": 5,
+      "total": 24
+    },
+    "wifi-calling-uk": {
+      "active": "henry",
+      "non_ip": 12,
+      "ip": 16,
+      "total": 28
+    },
+    "wifi-calling-hk": {
+      "active": "henry",
+      "non_ip": 8,
+      "ip": 8,
+      "total": 16
+    },
+    "telegram": {
+      "active": "sukka",
+      "non_ip": 15,
+      "ip": 19,
+      "total": 34
+    },
+    "x": {
+      "active": "v2fly",
+      "non_ip": 23,
+      "ip": 0,
+      "total": 23
+    },
+    "youtube": {
+      "active": "rulego",
+      "non_ip": 12,
+      "ip": 0,
+      "total": 12
+    },
+    "spotify": {
+      "active": "v2fly",
+      "non_ip": 25,
+      "ip": 0,
+      "total": 25
+    },
+    "stream-cn-exceptions": {
+      "active": "rulego",
+      "non_ip": 222,
+      "ip": 17,
+      "total": 239
+    },
+    "streaming": {
+      "active": "sukka",
+      "non_ip": 336,
+      "ip": 19,
+      "total": 355
+    },
+    "download": {
+      "active": "sukka",
+      "non_ip": 1977,
+      "ip": 0,
+      "total": 1977
+    },
+    "global-proxy": {
+      "active": "sukka",
+      "non_ip": 1270,
+      "ip": 0,
+      "total": 1270
+    },
+    "domestic": {
+      "active": "sukka",
+      "non_ip": 869,
+      "ip": 2,
+      "total": 871
+    },
+    "direct": {
+      "active": "sukka",
+      "non_ip": 220,
+      "ip": 0,
+      "total": 220
+    },
+    "china-ip": {
+      "active": "sukka",
+      "non_ip": 1,
+      "ip": 7298,
+      "total": 7299
+    },
+    "wechat": {
+      "active": "rulego",
+      "non_ip": 1,
+      "ip": 17,
+      "total": 18
+    }
+  }
+}

@@ -1,0 +1,9 @@
+# NAME: Genshin Impact
+IP-CIDR,8.211.0.0/16,no-resolve
+DOMAIN-SUFFIX,hoyolab.com
+DOMAIN-SUFFIX,hoyoverse.com
+DOMAIN,dispatchosglobal.yuanshen.com
+DOMAIN,osasiadispatch.yuanshen.com
+DOMAIN,overseauspider.yuanshen.com
+DOMAIN,osusadispatch.yuanshen.com
+DOMAIN,autopatchhk.yuanshen.com

@@ -132,11 +132,168 @@ Do not edit the embedded rule block in `docs/index.html` manually; it is overwri
 <!-- SURGE_RULE_BLOCK:START -->
 ## 最新 Surge `[Rule]` 配置（Actions 自动更新）
 
-> 尚未完成第一次成功的 GitHub Actions 远程构建。
-> 请运行 `Actions -> Sync and Build Surge Rules -> Run workflow`。成功后，本区域会自动替换为完整 `[Rule]`。
+> 本区域由 GitHub Actions 自动刷新，唯一内容来源是 `dist/RuleSnippet.conf`。请不要手动编辑本区域。
+
+> 最后构建：`2026-09-05T14:12:01Z` · 来源 Commit：[`65e6dbe`](https://github.com/CINGDAAT/Surge-Rule-Hub/commit/65e6dbed1df16382344f55b46ab8c7cb62b543ff) · [Actions Run #33971079810](https://github.com/CINGDAAT/Surge-Rule-Hub/actions/runs/33971079810)
+
+GitHub 代码块右上角可直接复制；也可打开 [`docs/RuleSnippet.conf`](docs/RuleSnippet.conf) 查看纯文本。
 
 ```ini
 [Rule]
-# WAITING_FOR_FIRST_SUCCESSFUL_ACTIONS_BUILD
+# Generated order: custom domain rules -> all remote non-IP -> custom IP -> all remote IP/ASN -> tail.
+DOMAIN-SUFFIX,skk.moe,🇺🇸Relay
+DOMAIN-SUFFIX,iplark.com,🇺🇸Relay
+DOMAIN-SUFFIX,ipcheck.ing,🇺🇸Relay
+DOMAIN,dns.google,Proxy
+DOMAIN,cloudflare-dns.com,Proxy
+DOMAIN-SUFFIX,usaddres.com,DIRECT
+DOMAIN-SUFFIX,daat.eu.org,DIRECT
+DOMAIN-SUFFIX,voxi.co.uk,United Kingdom
+DOMAIN-SUFFIX,redpocket.com,United States
+DOMAIN-SUFFIX,anytimemailbox.com,United States
+DOMAIN-SUFFIX,irs.gov,United States
+DOMAIN,api.lemonsqueezy.com,REJECT
+DOMAIN-SUFFIX,gametrade.jp,Japan
+DOMAIN,prepaid.hkcsl.com,DIRECT
+DOMAIN-SUFFIX,bochk.com,DIRECT
+DOMAIN-SUFFIX,gjfzpt.cn,REJECT
+DOMAIN-SUFFIX,jsdelivr.net,Proxy
+DEST-PORT,123,DIRECT
+
+# ===== Remote non-IP rules =====
+# > Advertising [awa]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/ads.non_ip.list,REJECT,extended-matching
+# > Reject No Drop [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/reject-no-drop.non_ip.list,REJECT-NO-DROP,extended-matching
+# > Reject Drop [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/reject-drop.non_ip.list,REJECT-DROP,extended-matching
+# > Speedtest [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/speedtest.non_ip.list,SpeedTest,extended-matching
+# > Static CDN [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/cdn.non_ip.list,Proxy,extended-matching
+# > iCloud Private Relay [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/apple-private-relay.non_ip.list,Proxy,extended-matching
+# > Apple Intelligence [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/apple-intelligence.non_ip.list,Proxy,extended-matching
+# > Apple Update [elysian]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/apple-update.non_ip.list,DIRECT,extended-matching
+# > Apple Non-CN CDN [elysian]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/apple-no-cn-cdn.non_ip.list,Proxy,extended-matching
+# > Apple API [elysian]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/apple-api.non_ip.list,Apple,extended-matching
+# > Apple CDN [elysian]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/apple-cdn.non_ip.list,Apple,extended-matching
+# > Apple General [elysian]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/apple-domain.non_ip.list,Apple,extended-matching
+# > Microsoft [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/microsoft.non_ip.list,Microsoft,extended-matching
+# > Google [v2fly]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/google.non_ip.list,Google,extended-matching
+# > AI [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/ai.non_ip.list,AI,extended-matching
+# > US Banks [fusion]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/us-banks.non_ip.list,United States,extended-matching
+# > Payments US [fusion]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/payments-us.non_ip.list,United States,extended-matching
+# > Wise [fusion]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/wise-direct.non_ip.list,DIRECT,extended-matching
+# > N26 [v2fly]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/n26-france.non_ip.list,France,extended-matching
+# > iFAST [official-manual]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/ifast-direct.non_ip.list,DIRECT,extended-matching
+# > Moomoo US [v2fly-brand]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/moomoo-us.non_ip.list,United States,extended-matching
+# > Broker US Safety Net [arthur-domain-clean]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/broker-us.non_ip.list,United States,extended-matching
+# > Interactive Brokers US [fusion]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/ibkr-us.non_ip.list,United States,extended-matching
+# > Bybit EU [v2fly+sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/bybit-eu.non_ip.list,France,extended-matching
+# > Binance US [v2fly+sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/binance-us.non_ip.list,United States,extended-matching
+# > OKX US [v2fly+sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/okx-us.non_ip.list,United States,extended-matching
+# > Kraken US [v2fly+sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/kraken-us.non_ip.list,United States,extended-matching
+# > Coinbase US [sukka-extract]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/coinbase-us.non_ip.list,United States,extended-matching
+# > Crypto.com US [sukka-extract]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/crypto-com-us.non_ip.list,United States,extended-matching
+# > HoYoverse [lm]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/hoyoverse.non_ip.list,Game,extended-matching
+# > Nintendo [v2fly]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/nintendo.non_ip.list,Game,extended-matching
+# > Epic [v2fly]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/epic.non_ip.list,Japan,extended-matching
+# > Steam [v2fly]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/steam.non_ip.list,Japan,extended-matching
+# > Wi-Fi Calling US [henry]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/wifi-calling-us.non_ip.list,United States,extended-matching
+# > Wi-Fi Calling UK [henry]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/wifi-calling-uk.non_ip.list,United Kingdom,extended-matching
+# > Wi-Fi Calling HK [henry]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/wifi-calling-hk.non_ip.list,Hong Kong,extended-matching
+# > Telegram [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/telegram.non_ip.list,Proxy,extended-matching
+# > X / Twitter [v2fly]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/x.non_ip.list,Proxy,extended-matching
+# > YouTube [rulego]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/youtube.non_ip.list,Streaming,extended-matching
+# > Spotify [v2fly]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/spotify.non_ip.list,Proxy,extended-matching
+# > Streaming CN Exceptions [rulego]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/stream-cn-exceptions.non_ip.list,Streaming,extended-matching
+# > International Streaming [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/streaming.non_ip.list,Streaming,extended-matching
+# > Download [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/download.non_ip.list,Download,extended-matching
+# > Global Proxy [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/global-proxy.non_ip.list,Proxy,extended-matching
+# > Domestic [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/domestic.non_ip.list,DIRECT,extended-matching
+# > Direct [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/direct.non_ip.list,DIRECT,extended-matching
+# > China IP [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/china-ip.non_ip.list,DIRECT,extended-matching
+# > WeChat [rulego]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/wechat.non_ip.list,DIRECT,extended-matching
+
+# ===== Local/custom IP rules =====
+IP-CIDR,161.33.3.233/32,DIRECT,no-resolve
+IP-CIDR,8.216.83.167/32,Game,no-resolve
+IP-CIDR,1.1.1.1/32,Proxy,no-resolve
+IP-CIDR,1.0.0.1/32,Proxy,no-resolve
+IP-CIDR,8.8.8.8/32,Proxy,no-resolve
+IP-CIDR,8.8.4.4/32,Proxy,no-resolve
+IP-ASN,132203,DIRECT
+IP-ASN,56040,DIRECT
+IP-ASN,45090,DIRECT
+
+# ===== Remote IP / ASN rules =====
+# > Apple API [elysian]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/apple-api.ip.list,Apple
+# > Wi-Fi Calling US [henry]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/wifi-calling-us.ip.list,United States
+# > Wi-Fi Calling UK [henry]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/wifi-calling-uk.ip.list,United Kingdom
+# > Wi-Fi Calling HK [henry]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/wifi-calling-hk.ip.list,Hong Kong
+# > Telegram [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/telegram.ip.list,Proxy
+# > Streaming CN Exceptions [rulego]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/stream-cn-exceptions.ip.list,Streaming
+# > International Streaming [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/streaming.ip.list,Streaming
+# > Domestic [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/domestic.ip.list,DIRECT
+# > China IP [sukka]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/china-ip.ip.list,DIRECT
+# > WeChat [rulego]
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/wechat.ip.list,DIRECT
+
+# ===== Tail =====
+RULE-SET,LAN,DIRECT
+GEOIP,CN,DIRECT
+FINAL,Final,dns-failed
 ```
 <!-- SURGE_RULE_BLOCK:END -->
