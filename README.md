@@ -134,31 +134,13 @@ Do not edit the embedded rule block in `docs/index.html` manually; it is overwri
 
 > 本区域由 GitHub Actions 自动刷新，唯一内容来源是 `dist/RuleSnippet.conf`。请不要手动编辑本区域。
 
-> 最后构建：`2026-09-05T14:21:48Z` · 来源 Commit：[`da4ed78`](https://github.com/CINGDAAT/Surge-Rule-Hub/commit/da4ed78c976d3547fa41470b76c7d381730fc392) · [Actions Run #33971572028](https://github.com/CINGDAAT/Surge-Rule-Hub/actions/runs/33971572028)
+> 最后构建：`2026-09-05T14:25:06Z` · 来源 Commit：[`ce77f85`](https://github.com/CINGDAAT/Surge-Rule-Hub/commit/ce77f858036801c9c1bf79c3f1068be8117e7866) · [Actions Run #33971725269](https://github.com/CINGDAAT/Surge-Rule-Hub/actions/runs/33971725269)
 
 GitHub 代码块右上角可直接复制；也可打开 [`docs/RuleSnippet.conf`](docs/RuleSnippet.conf) 查看纯文本。
 
 ```ini
 [Rule]
 # Generated order: custom domain rules -> all remote non-IP -> custom IP -> all remote IP/ASN -> tail.
-DOMAIN-SUFFIX,skk.moe,🇺🇸Relay
-DOMAIN-SUFFIX,iplark.com,🇺🇸Relay
-DOMAIN-SUFFIX,ipcheck.ing,🇺🇸Relay
-DOMAIN,dns.google,Proxy
-DOMAIN,cloudflare-dns.com,Proxy
-DOMAIN-SUFFIX,usaddres.com,DIRECT
-DOMAIN-SUFFIX,daat.eu.org,DIRECT
-DOMAIN-SUFFIX,voxi.co.uk,United Kingdom
-DOMAIN-SUFFIX,redpocket.com,United States
-DOMAIN-SUFFIX,anytimemailbox.com,United States
-DOMAIN-SUFFIX,irs.gov,United States
-DOMAIN,api.lemonsqueezy.com,REJECT
-DOMAIN-SUFFIX,gametrade.jp,Japan
-DOMAIN,prepaid.hkcsl.com,DIRECT
-DOMAIN-SUFFIX,bochk.com,DIRECT
-DOMAIN-SUFFIX,gjfzpt.cn,REJECT
-DOMAIN-SUFFIX,jsdelivr.net,Proxy
-DEST-PORT,123,DIRECT
 
 # ===== Remote non-IP rules =====
 # > Advertising [awa]
