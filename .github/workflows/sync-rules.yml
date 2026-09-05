@@ -7,7 +7,6 @@ on:
   push:
     branches:
       - main
-      - master
     paths:
       - 'config/**'
       - 'scripts/**'
@@ -22,15 +21,33 @@ permissions:
 
 concurrency:
   group: surge-rule-hub-pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
     name: Sync rules and build Pages
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout current main
         uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Force workspace to latest origin/main
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Workflow V10: latest-main checkout guard"
+          echo "Event SHA: $GITHUB_SHA"
+          git fetch --prune origin main
+          git checkout -B main origin/main
+          git reset --hard origin/main
+          CHECKED_SHA="$(git rev-parse HEAD)"
+          REMOTE_SHA="$(git rev-parse origin/main)"
+          echo "Checked-out SHA: $CHECKED_SHA"
+          echo "origin/main SHA: $REMOTE_SHA"
+          test "$CHECKED_SHA" = "$REMOTE_SHA"
 
       - name: Set up Python
         uses: actions/setup-python@v7
@@ -38,28 +55,35 @@ jobs:
           python-version: '3.12'
 
       - name: Show pipeline revision
+        shell: bash
         run: |
+          set -euo pipefail
           echo "Repository: $GITHUB_REPOSITORY"
-          echo "Commit: $GITHUB_SHA"
-          echo "Workflow: .github/workflows/sync-rules.yml"
-          grep -n "PIPELINE_VERSION" scripts/canonical_build.py || true
-          sha256sum scripts/canonical_build.py scripts/readme_sync.py scripts/verify.py
+          echo "Event SHA: $GITHUB_SHA"
+          echo "Actual checkout SHA: $(git rev-parse HEAD)"
+          echo "Workflow: .github/workflows/sync-rules.yml (V10 latest-main guard)"
+          sha256sum scripts/canonical_build.py scripts/select.py scripts/readme_sync.py scripts/verify.py
+          sed -n '1,35p' scripts/canonical_build.py
 
       - name: Verify canonical builder identity
+        shell: bash
         run: |
           set -euo pipefail
           VERSION="$(python3 scripts/canonical_build.py --version)"
           echo "Builder: $VERSION"
           if [ "$VERSION" != "surge-rule-hub v9 canonical-builder" ]; then
-            echo "::error title=Wrong scripts/canonical_build.py::Expected the V9 canonical builder, but scripts/canonical_build.py is missing or wrong."
+            echo "::error title=Wrong canonical builder::The latest origin/main does not contain the verified canonical builder."
+            echo "Actual file SHA256: $(sha256sum scripts/canonical_build.py | awk '{print $1}')"
+            echo "First 80 lines:"
+            sed -n '1,80p' scripts/canonical_build.py
             exit 1
           fi
           if [ -e scripts/build.py ]; then
-            echo "::error title=Legacy scripts/build.py must be removed::V9 no longer uses scripts/build.py. Delete it so an old selector/build script cannot cause confusion."
+            echo "::error title=Legacy scripts/build.py must be removed::V9/V10 no longer uses scripts/build.py."
             exit 1
           fi
           if cmp -s scripts/canonical_build.py scripts/select.py; then
-            echo "::error title=canonical_build.py is select.py::scripts/canonical_build.py and scripts/select.py are identical. The wrong file was uploaded."
+            echo "::error title=canonical_build.py is select.py::The canonical builder and selector are identical."
             exit 1
           fi
           grep -q "SURGE_RULE_HUB_CANONICAL_BUILDER_V9" scripts/canonical_build.py
@@ -71,23 +95,22 @@ jobs:
       - name: Build canonical Surge outputs
         env:
           PUBLIC_BASE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+        shell: bash
         run: |
           set -euo pipefail
           python3 scripts/canonical_build.py
 
           echo "--- canonical artifact check ---"
           if [ ! -s dist/RuleSnippet.conf ]; then
-            echo "::error title=Canonical Surge snippet missing::scripts/canonical_build.py exited successfully but dist/RuleSnippet.conf is missing or empty."
+            echo "::error title=Canonical Surge snippet missing::canonical_build.py exited successfully but dist/RuleSnippet.conf is missing or empty."
             echo "PWD=$PWD"
-            echo "Generated directories:"
             ls -la dist docs rules mirror 2>/dev/null || true
-            echo "Nearby files:"
             find . -maxdepth 3 -type f | sort | sed -n '1,260p'
             exit 1
           fi
 
           if ! grep -q '^\[Rule\]$' dist/RuleSnippet.conf; then
-            echo "::error title=Invalid canonical Surge snippet::dist/RuleSnippet.conf exists but has no [Rule] header."
+            echo "::error title=Invalid canonical Surge snippet::dist/RuleSnippet.conf has no [Rule] header."
             sed -n '1,80p' dist/RuleSnippet.conf || true
             exit 1
           fi
@@ -105,15 +128,28 @@ jobs:
       - name: Verify generated rules
         run: python3 scripts/verify.py
 
-      - name: Commit last-known-good mirrors and generated output
+      - name: Commit generated outputs safely
+        shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Never let a queued/stale job overwrite a newer main commit.
+          BASE_SHA="$(git rev-parse HEAD)"
+          git fetch origin main
+          REMOTE_SHA="$(git rev-parse origin/main)"
+          echo "Build base SHA: $BASE_SHA"
+          echo "Current origin/main SHA: $REMOTE_SHA"
+          if [ "$BASE_SHA" != "$REMOTE_SHA" ]; then
+            echo "::error title=main changed during build::A newer main commit appeared while this job was building. The new run will handle it; refusing to push stale output."
+            exit 1
+          fi
+
           git add -A -- .
           if ! git diff --cached --quiet; then
             git commit -m "chore: sync upstream rules"
-            git push
+            git push origin HEAD:main
           else
             echo "No generated changes to commit."
           fi
