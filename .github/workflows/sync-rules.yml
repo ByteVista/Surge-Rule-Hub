@@ -45,6 +45,9 @@ jobs:
           PUBLIC_BASE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
         run: python3 scripts/build.py
 
+      - name: Sync README from canonical RuleSnippet.conf
+        run: python3 scripts/readme_sync.py
+
       - name: Verify generated rules
         run: python3 scripts/verify.py
 
