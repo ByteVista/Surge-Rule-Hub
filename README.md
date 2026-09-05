@@ -134,13 +134,14 @@ Do not edit the embedded rule block in `docs/index.html` manually; it is overwri
 
 > 本区域由 GitHub Actions 自动刷新，唯一内容来源是 `dist/RuleSnippet.conf`。请不要手动编辑本区域。
 
-> 最后构建：`2026-09-05T14:25:06Z` · 来源 Commit：[`ce77f85`](https://github.com/CINGDAAT/Surge-Rule-Hub/commit/ce77f858036801c9c1bf79c3f1068be8117e7866) · [Actions Run #33971725269](https://github.com/CINGDAAT/Surge-Rule-Hub/actions/runs/33971725269)
+> 最后构建：`2026-09-05T14:35:11Z` · 来源 Commit：[`cb5bb24`](https://github.com/CINGDAAT/Surge-Rule-Hub/commit/cb5bb24409f9bccf689160ad6c16b990cecd3d68) · [Actions Run #33972230949](https://github.com/CINGDAAT/Surge-Rule-Hub/actions/runs/33972230949)
 
 GitHub 代码块右上角可直接复制；也可打开 [`docs/RuleSnippet.conf`](docs/RuleSnippet.conf) 查看纯文本。
 
 ```ini
 [Rule]
 # Generated order: custom domain rules -> all remote non-IP -> custom IP -> all remote IP/ASN -> tail.
+PROTOCOL,STUN,REJECT
 
 # ===== Remote non-IP rules =====
 # > Advertising [awa]
@@ -247,35 +248,35 @@ IP-CIDR,1.1.1.1/32,Proxy,no-resolve
 IP-CIDR,1.0.0.1/32,Proxy,no-resolve
 IP-CIDR,8.8.8.8/32,Proxy,no-resolve
 IP-CIDR,8.8.4.4/32,Proxy,no-resolve
-IP-ASN,132203,DIRECT
-IP-ASN,56040,DIRECT
-IP-ASN,45090,DIRECT
+IP-ASN,132203,DIRECT,no-resolve
+IP-ASN,56040,DIRECT,no-resolve
+IP-ASN,45090,DIRECT,no-resolve
 
 # ===== Remote IP / ASN rules =====
 # > Apple API [elysian]
-RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/apple-api.ip.list,Apple
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/apple-api.ip.list,Apple,no-resolve
 # > Wi-Fi Calling US [henry]
-RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/wifi-calling-us.ip.list,United States
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/wifi-calling-us.ip.list,United States,no-resolve
 # > Wi-Fi Calling UK [henry]
-RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/wifi-calling-uk.ip.list,United Kingdom
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/wifi-calling-uk.ip.list,United Kingdom,no-resolve
 # > Wi-Fi Calling HK [henry]
-RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/wifi-calling-hk.ip.list,Hong Kong
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/wifi-calling-hk.ip.list,Hong Kong,no-resolve
 # > Telegram [sukka]
-RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/telegram.ip.list,Proxy
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/telegram.ip.list,Proxy,no-resolve
 # > Streaming CN Exceptions [rulego]
-RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/stream-cn-exceptions.ip.list,Streaming
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/stream-cn-exceptions.ip.list,Streaming,no-resolve
 # > International Streaming [sukka]
-RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/streaming.ip.list,Streaming
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/streaming.ip.list,Streaming,no-resolve
 # > Domestic [sukka]
-RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/domestic.ip.list,DIRECT
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/domestic.ip.list,DIRECT,no-resolve
 # > China IP [sukka]
-RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/china-ip.ip.list,DIRECT
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/china-ip.ip.list,DIRECT,no-resolve
 # > WeChat [rulego]
-RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/wechat.ip.list,DIRECT
+RULE-SET,https://CINGDAAT.github.io/Surge-Rule-Hub/rules/wechat.ip.list,DIRECT,no-resolve
 
 # ===== Tail =====
 RULE-SET,LAN,DIRECT
-GEOIP,CN,DIRECT
+GEOIP,CN,DIRECT,no-resolve
 FINAL,Final,dns-failed
 ```
 <!-- SURGE_RULE_BLOCK:END -->
