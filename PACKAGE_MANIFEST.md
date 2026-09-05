@@ -47,7 +47,7 @@
 ## V9 builder identity guard
 
 - Canonical build entrypoint: `scripts/canonical_build.py`
-- Selector utility: `scripts/select.py`
+- Selector utility: `scripts/select_source.py`
 - `scripts/canonical_build.py --version` must return exactly `surge-rule-hub v9 canonical-builder`.
 - Actions fails before network fetching if builder/selector files are mixed up.
 - The root-level workflow backup was removed to avoid confusing it with the only active workflow under `.github/workflows/`.

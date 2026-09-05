@@ -56,19 +56,19 @@ GitHub Pages 站点用于给 Surge 拉取远程规则，因此通常必须公开
 仓库不会把我的推荐强制锁死。查看所有可选项：
 
 ```bash
-python3 scripts/select.py --list
+python3 scripts/select_source.py --list
 ```
 
 例如把美国银行切到纯 Accademia：
 
 ```bash
-python3 scripts/select.py us-banks accademia
+python3 scripts/select_source.py us-banks accademia
 ```
 
 把 Moomoo 切到“v2fly + Arthur 共享 Futu/Moomoo 域名（不含大段 IP）”覆盖版：
 
 ```bash
-python3 scripts/select.py moomoo-us coverage-fusion
+python3 scripts/select_source.py moomoo-us coverage-fusion
 ```
 
 切换后提交 `config/services.json`，下一次 Actions 会自动重建。完整候选理由见 `UPSTREAM_COMPARISON.md`。
