@@ -37,3 +37,9 @@
 - Pages shows `Active sources: N/N OK` and `Services: 48/48 non-empty`, and publishes `build-report.json` for diagnostics.
 - Parser now preserves `DOMAIN-WILDCARD`, `URL-REGEX`, and external RULE-SET logical `AND/OR/NOT` lines instead of silently dropping them.
 - Local unit tests: 11.
+
+## V7 changes
+- canonical build guard requires non-empty `dist/RuleSnippet.conf` before README sync
+- removed duplicate README synchronization from `build.py`; workflow owns the sequence explicitly
+- Action logs pipeline version and script SHA-256 hashes
+- build outputs `pipeline-version.txt` to `dist/` and `docs/`

@@ -37,31 +37,65 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Run parser tests
+      - name: Show pipeline revision
+        run: |
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Commit: $GITHUB_SHA"
+          echo "Workflow: .github/workflows/sync-rules.yml"
+          grep -n "PIPELINE_VERSION" scripts/build.py || true
+          sha256sum scripts/build.py scripts/readme_sync.py scripts/verify.py
+
+      - name: Run parser and README tests
         run: python3 -m unittest discover -s tests -v
 
-      - name: Mirror, convert, merge and build
+      - name: Build canonical Surge outputs
         env:
           PUBLIC_BASE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
-        run: python3 scripts/build.py
+        run: |
+          set -euo pipefail
+          python3 scripts/build.py
+
+          echo "--- canonical artifact check ---"
+          if [ ! -s dist/RuleSnippet.conf ]; then
+            echo "::error title=Canonical Surge snippet missing::scripts/build.py exited successfully but dist/RuleSnippet.conf is missing or empty. This normally means repository files from different package versions were mixed."
+            echo "PWD=$PWD"
+            echo "Generated directories:"
+            ls -la dist docs rules mirror 2>/dev/null || true
+            echo "Nearby files:"
+            find . -maxdepth 3 -type f | sort | sed -n '1,260p'
+            exit 1
+          fi
+
+          if ! grep -q '^\[Rule\]$' dist/RuleSnippet.conf; then
+            echo "::error title=Invalid canonical Surge snippet::dist/RuleSnippet.conf exists but has no [Rule] header."
+            sed -n '1,80p' dist/RuleSnippet.conf || true
+            exit 1
+          fi
+
+          echo "Canonical snippet generated successfully:"
+          wc -l -c dist/RuleSnippet.conf
+          sed -n '1,24p' dist/RuleSnippet.conf
 
       - name: Sync README from canonical RuleSnippet.conf
-        run: python3 scripts/readme_sync.py
+        run: |
+          set -euo pipefail
+          python3 scripts/readme_sync.py
+          test -s README.md
 
       - name: Verify generated rules
         run: python3 scripts/verify.py
 
       - name: Commit last-known-good mirrors and generated output
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Stage all changes produced by this clean CI checkout.
-          # Do not name mirror/ explicitly: an empty untracked directory makes
-          # `git add mirror` fail with "pathspec did not match any files".
           git add -A -- .
           if ! git diff --cached --quiet; then
             git commit -m "chore: sync upstream rules"
             git push
+          else
+            echo "No generated changes to commit."
           fi
 
       - name: Configure GitHub Pages

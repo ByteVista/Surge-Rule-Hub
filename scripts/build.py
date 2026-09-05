@@ -16,9 +16,9 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parent
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
-from readme_sync import sync_readme
 
 ROOT = Path(__file__).resolve().parents[1]
+PIPELINE_VERSION = 'v7'
 CONFIG = ROOT / 'config'
 MIRROR = ROOT / 'mirror'
 RULES = ROOT / 'rules'
@@ -548,6 +548,7 @@ table{{border-collapse:collapse;width:100%;min-width:820px}} th,td{{border-botto
 
 
 def main():
+    print(f'[PIPELINE] Surge Rule Hub {PIPELINE_VERSION}: canonical build')
     ap=argparse.ArgumentParser()
     ap.add_argument('--offline', action='store_true', help='use existing mirrors only')
     args=ap.parse_args()
@@ -605,7 +606,7 @@ def main():
     (DOCS/'rules').mkdir(parents=True,exist_ok=True)
     DIST.mkdir(parents=True,exist_ok=True)
 
-    report={'sources':source_report,'active_sources':sorted(active_source_ids),'services':{}}
+    report={'pipeline_version':PIPELINE_VERSION,'sources':source_report,'active_sources':sorted(active_source_ids),'services':{}}
     for s in services_cfg['services']:
         cand_dir=RULES/'candidates'/s['id']
         cand_dir.mkdir(parents=True,exist_ok=True)
@@ -638,10 +639,10 @@ def main():
     atomic_write(DOCS/'rule-snippet.txt', snippet)
     atomic_write(DIST/'RuleSnippet-Mac.conf', mac_snippet)
     atomic_write(DOCS/'RuleSnippet-Mac.conf', mac_snippet)
-    # README is generated from the canonical file on disk, never from a second copy.
-    sync_readme(ROOT)
     write_general_presets()
     atomic_write(DOCS/'.nojekyll', '')
+    atomic_write(DIST/'pipeline-version.txt', PIPELINE_VERSION+'\n')
+    atomic_write(DOCS/'pipeline-version.txt', PIPELINE_VERSION+'\n')
     report_json=json.dumps(report,ensure_ascii=False,indent=2)+'\n'
     atomic_write(DIST/'build-report.json', report_json)
     atomic_write(DOCS/'build-report.json', report_json)
