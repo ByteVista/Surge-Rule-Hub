@@ -22,8 +22,8 @@
     "sukka_speedtest_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 3372,
-      "bytes": 86710
+      "parsed_rules": 3374,
+      "bytes": 86762
     },
     "sukka_cdn_domainset": {
       "status": "ok",
@@ -64,8 +64,8 @@
     "sukka_ai": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 51,
-      "bytes": 1986
+      "parsed_rules": 52,
+      "bytes": 2010
     },
     "sukka_telegram_non_ip": {
       "status": "ok",
@@ -536,9 +536,9 @@
     },
     "speedtest": {
       "active": "sukka",
-      "non_ip": 3371,
+      "non_ip": 3373,
       "ip": 0,
-      "total": 3371
+      "total": 3373
     },
     "cdn": {
       "active": "sukka",
@@ -602,9 +602,9 @@
     },
     "ai": {
       "active": "sukka",
-      "non_ip": 51,
+      "non_ip": 52,
       "ip": 0,
-      "total": 51
+      "total": 52
     },
     "us-banks": {
       "active": "fusion",
