@@ -134,7 +134,7 @@ Do not edit the embedded rule block in `docs/index.html` manually; it is overwri
 
 > 本区域由 GitHub Actions 自动刷新，唯一内容来源是 `dist/RuleSnippet.conf`。请不要手动编辑本区域。
 
-> 最后构建：`2026-09-09T07:25:31Z` · 来源 Commit：[`21b8f63`](https://github.com/ByteVista/Surge-Rule-Hub/commit/21b8f6358f0ac1977b28f2b1df6ffd2caf6d96b7) · [Actions Run #34323734259](https://github.com/ByteVista/Surge-Rule-Hub/actions/runs/34323734259)
+> 最后构建：`2026-09-09T07:32:36Z` · 来源 Commit：[`27d10a9`](https://github.com/ByteVista/Surge-Rule-Hub/commit/27d10a946347305ba1fd7f5b677d3510b731ca0b) · [Actions Run #34324346179](https://github.com/ByteVista/Surge-Rule-Hub/actions/runs/34324346179)
 
 GitHub 代码块右上角可直接复制；也可打开 [`docs/RuleSnippet.conf`](docs/RuleSnippet.conf) 查看纯文本。
 
@@ -152,9 +152,9 @@ RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/reject-no-drop.non_ip.
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/reject-drop.non_ip.list,REJECT-DROP,extended-matching
 # > Speedtest [sukka]
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/speedtest.non_ip.list,SpeedTest,extended-matching
-# > OneDrive [blackmatrix7]
+# > OneDrive [curated-fusion]
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/onedrive.non_ip.list,Microsoft,extended-matching
-# > Google Drive [blackmatrix7]
+# > Google Drive [curated-fusion]
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/google-drive.non_ip.list,Google,extended-matching
 # > GitHub [blackmatrix7]
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/github.non_ip.list,Proxy,extended-matching

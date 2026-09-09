@@ -468,6 +468,24 @@
       "format": "surge",
       "parsed_rules": 18,
       "bytes": 735
+    },
+    "official_google_drive": {
+      "status": "ok",
+      "format": "manual",
+      "parsed_rules": 3,
+      "bytes": 135
+    },
+    "v2_onedrive": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 11,
+      "bytes": 149
+    },
+    "official_onedrive": {
+      "status": "ok",
+      "format": "manual",
+      "parsed_rules": 6,
+      "bytes": 139
     }
   },
   "active_sources": [
@@ -490,6 +508,8 @@
     "ibkr_gist",
     "lm_hoyoverse",
     "manual_ifast",
+    "official_google_drive",
+    "official_onedrive",
     "rulego_stream_cn",
     "rulego_wechat",
     "rulego_youtube",
@@ -527,6 +547,7 @@
     "v2_n26",
     "v2_nintendo",
     "v2_okx",
+    "v2_onedrive",
     "v2_paypal",
     "v2_spotify",
     "v2_steam",
@@ -832,16 +853,16 @@
       "total": 31
     },
     "google-drive": {
-      "active": "blackmatrix7",
-      "non_ip": 9,
+      "active": "curated-fusion",
+      "non_ip": 12,
       "ip": 0,
-      "total": 9
+      "total": 12
     },
     "onedrive": {
-      "active": "blackmatrix7",
-      "non_ip": 18,
+      "active": "curated-fusion",
+      "non_ip": 27,
       "ip": 0,
-      "total": 18
+      "total": 27
     }
   }
 }
