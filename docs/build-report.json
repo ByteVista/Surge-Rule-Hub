@@ -450,6 +450,12 @@
       "format": "surge",
       "parsed_rules": 8,
       "bytes": 282
+    },
+    "blackmatrix_github": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 31,
+      "bytes": 1117
     }
   },
   "active_sources": [
@@ -460,6 +466,7 @@
     "accademia_wise",
     "arthur_broker",
     "awa_ads",
+    "blackmatrix_github",
     "elysian_apple_api_domain",
     "elysian_apple_api_ip",
     "elysian_apple_cdn_domain",
@@ -803,6 +810,12 @@
       "non_ip": 1,
       "ip": 17,
       "total": 18
+    },
+    "github": {
+      "active": "blackmatrix7",
+      "non_ip": 31,
+      "ip": 0,
+      "total": 31
     }
   }
 }

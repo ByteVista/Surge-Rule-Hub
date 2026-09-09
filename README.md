@@ -134,7 +134,7 @@ Do not edit the embedded rule block in `docs/index.html` manually; it is overwri
 
 > 本区域由 GitHub Actions 自动刷新，唯一内容来源是 `dist/RuleSnippet.conf`。请不要手动编辑本区域。
 
-> 最后构建：`2026-09-08T21:23:02Z` · 来源 Commit：[`ca4d6a9`](https://github.com/ByteVista/Surge-Rule-Hub/commit/ca4d6a9744971be7d9a9a76597a53debc2d21548) · [Actions Run #34280240305](https://github.com/ByteVista/Surge-Rule-Hub/actions/runs/34280240305)
+> 最后构建：`2026-09-09T04:05:19Z` · 来源 Commit：[`14885c1`](https://github.com/ByteVista/Surge-Rule-Hub/commit/14885c15d1e3d2ff6ff1459e8054b522c871f14f) · [Actions Run #34309566790](https://github.com/ByteVista/Surge-Rule-Hub/actions/runs/34309566790)
 
 GitHub 代码块右上角可直接复制；也可打开 [`docs/RuleSnippet.conf`](docs/RuleSnippet.conf) 查看纯文本。
 
@@ -152,6 +152,8 @@ RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/reject-no-drop.non_ip.
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/reject-drop.non_ip.list,REJECT-DROP,extended-matching
 # > Speedtest [sukka]
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/speedtest.non_ip.list,SpeedTest,extended-matching
+# > GitHub [blackmatrix7]
+RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/github.non_ip.list,Proxy,extended-matching
 # > Static CDN [sukka]
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/cdn.non_ip.list,Proxy,extended-matching
 # > iCloud Private Relay [sukka]
