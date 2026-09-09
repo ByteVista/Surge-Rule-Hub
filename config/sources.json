@@ -537,6 +537,12 @@
       "format": "surge",
       "url": "https://raw.githubusercontent.com/CINGDAAT/Rules/main/Surge/Genshin%20Impact.list",
       "upstream": "CINGDAAT/Rules"
+    },
+    {
+      "id": "blackmatrix_github",
+      "format": "surge",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list",
+      "upstream": "blackmatrix7/ios_rule_script"
     }
   ]
 }

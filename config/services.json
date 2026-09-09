@@ -1279,6 +1279,22 @@
           ]
         }
       }
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "policy": "Proxy",
+      "order": 29,
+      "active": "blackmatrix7",
+      "candidates": {
+        "blackmatrix7": {
+          "sources": [
+            {
+              "id": "blackmatrix_github"
+            }
+          ]
+        }
+      }
     }
   ]
 }
