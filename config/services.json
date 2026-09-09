@@ -1311,6 +1311,22 @@
           ]
         }
       }
+    },
+    {
+      "id": "onedrive",
+      "name": "OneDrive",
+      "policy": "Microsoft",
+      "order": 27,
+      "active": "blackmatrix7",
+      "candidates": {
+        "blackmatrix7": {
+          "sources": [
+            {
+              "id": "blackmatrix_onedrive"
+            }
+          ]
+        }
+      }
     }
   ]
 }
