@@ -1301,12 +1301,22 @@
       "name": "Google Drive",
       "policy": "Google",
       "order": 28,
-      "active": "blackmatrix7",
+      "active": "curated-fusion",
       "candidates": {
         "blackmatrix7": {
           "sources": [
             {
               "id": "blackmatrix_google_drive"
+            }
+          ]
+        },
+        "curated-fusion": {
+          "sources": [
+            {
+              "id": "blackmatrix_google_drive"
+            },
+            {
+              "id": "official_google_drive"
             }
           ]
         }
@@ -1317,12 +1327,32 @@
       "name": "OneDrive",
       "policy": "Microsoft",
       "order": 27,
-      "active": "blackmatrix7",
+      "active": "curated-fusion",
       "candidates": {
         "blackmatrix7": {
           "sources": [
             {
               "id": "blackmatrix_onedrive"
+            }
+          ]
+        },
+        "curated-fusion": {
+          "sources": [
+            {
+              "id": "blackmatrix_onedrive",
+              "filter": {
+                "deny_domain_roots": [
+                  "1drv",
+                  "onedrive",
+                  "skydrive"
+                ]
+              }
+            },
+            {
+              "id": "v2_onedrive"
+            },
+            {
+              "id": "official_onedrive"
             }
           ]
         }

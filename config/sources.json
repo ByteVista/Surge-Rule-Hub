@@ -555,6 +555,35 @@
       "format": "surge",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OneDrive/OneDrive.list",
       "upstream": "blackmatrix7/ios_rule_script"
+    },
+    {
+      "id": "official_google_drive",
+      "format": "manual",
+      "upstream": "Google Workspace: https://knowledge.workspace.google.com/admin/drive/drive-and-sites-firewall-and-proxy-settings (curated 2026-09-09; dedicated endpoints only)",
+      "rules": [
+        "DOMAIN,drive.usercontent.google.com",
+        "DOMAIN,drive-data-export.usercontent.google.com",
+        "DOMAIN,drive-data-export-eu.usercontent.google.com"
+      ]
+    },
+    {
+      "id": "v2_onedrive",
+      "format": "v2fly",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/onedrive",
+      "upstream": "v2fly/domain-list-community"
+    },
+    {
+      "id": "official_onedrive",
+      "format": "manual",
+      "upstream": "Microsoft: https://learn.microsoft.com/en-us/sharepoint/required-urls-and-ports (curated 2026-09-09; file/API endpoints only)",
+      "rules": [
+        "DOMAIN-SUFFIX,docs.live.net",
+        "DOMAIN,api.live.net",
+        "DOMAIN,apis.live.net",
+        "DOMAIN,skyapi.live.net",
+        "DOMAIN,snapi.live.net",
+        "DOMAIN,skydrive.live.com"
+      ]
     }
   ]
 }
