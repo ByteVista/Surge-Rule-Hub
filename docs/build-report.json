@@ -456,6 +456,12 @@
       "format": "surge",
       "parsed_rules": 31,
       "bytes": 1117
+    },
+    "blackmatrix_google_drive": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 9,
+      "bytes": 490
     }
   },
   "active_sources": [
@@ -467,6 +473,7 @@
     "arthur_broker",
     "awa_ads",
     "blackmatrix_github",
+    "blackmatrix_google_drive",
     "elysian_apple_api_domain",
     "elysian_apple_api_ip",
     "elysian_apple_cdn_domain",
@@ -816,6 +823,12 @@
       "non_ip": 31,
       "ip": 0,
       "total": 31
+    },
+    "google-drive": {
+      "active": "blackmatrix7",
+      "non_ip": 9,
+      "ip": 0,
+      "total": 9
     }
   }
 }

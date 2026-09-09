@@ -134,7 +134,7 @@ Do not edit the embedded rule block in `docs/index.html` manually; it is overwri
 
 > 本区域由 GitHub Actions 自动刷新，唯一内容来源是 `dist/RuleSnippet.conf`。请不要手动编辑本区域。
 
-> 最后构建：`2026-09-09T05:08:38Z` · 来源 Commit：[`dcbc2ad`](https://github.com/ByteVista/Surge-Rule-Hub/commit/dcbc2adde2e053045718f49dd4964b899e0f181e) · [Actions Run #34313673012](https://github.com/ByteVista/Surge-Rule-Hub/actions/runs/34313673012)
+> 最后构建：`2026-09-09T07:22:31Z` · 来源 Commit：[`6e99b41`](https://github.com/ByteVista/Surge-Rule-Hub/commit/6e99b41729684dd190a42a03c844039aba5cc583) · [Actions Run #34323486581](https://github.com/ByteVista/Surge-Rule-Hub/actions/runs/34323486581)
 
 GitHub 代码块右上角可直接复制；也可打开 [`docs/RuleSnippet.conf`](docs/RuleSnippet.conf) 查看纯文本。
 
@@ -152,6 +152,8 @@ RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/reject-no-drop.non_ip.
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/reject-drop.non_ip.list,REJECT-DROP,extended-matching
 # > Speedtest [sukka]
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/speedtest.non_ip.list,SpeedTest,extended-matching
+# > Google Drive [blackmatrix7]
+RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/google-drive.non_ip.list,Google,extended-matching
 # > GitHub [blackmatrix7]
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/github.non_ip.list,Proxy,extended-matching
 # > Static CDN [sukka]
