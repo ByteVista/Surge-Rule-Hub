@@ -462,6 +462,12 @@
       "format": "surge",
       "parsed_rules": 9,
       "bytes": 490
+    },
+    "blackmatrix_onedrive": {
+      "status": "ok",
+      "format": "surge",
+      "parsed_rules": 18,
+      "bytes": 735
     }
   },
   "active_sources": [
@@ -474,6 +480,7 @@
     "awa_ads",
     "blackmatrix_github",
     "blackmatrix_google_drive",
+    "blackmatrix_onedrive",
     "elysian_apple_api_domain",
     "elysian_apple_api_ip",
     "elysian_apple_cdn_domain",
@@ -829,6 +836,12 @@
       "non_ip": 9,
       "ip": 0,
       "total": 9
+    },
+    "onedrive": {
+      "active": "blackmatrix7",
+      "non_ip": 18,
+      "ip": 0,
+      "total": 18
     }
   }
 }
