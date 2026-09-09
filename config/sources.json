@@ -543,6 +543,12 @@
       "format": "surge",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list",
       "upstream": "blackmatrix7/ios_rule_script"
+    },
+    {
+      "id": "blackmatrix_google_drive",
+      "format": "surge",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleDrive/GoogleDrive.list",
+      "upstream": "blackmatrix7/ios_rule_script"
     }
   ]
 }

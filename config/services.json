@@ -1295,6 +1295,22 @@
           ]
         }
       }
+    },
+    {
+      "id": "google-drive",
+      "name": "Google Drive",
+      "policy": "Google",
+      "order": 28,
+      "active": "blackmatrix7",
+      "candidates": {
+        "blackmatrix7": {
+          "sources": [
+            {
+              "id": "blackmatrix_google_drive"
+            }
+          ]
+        }
+      }
     }
   ]
 }
