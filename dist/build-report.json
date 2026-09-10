@@ -136,8 +136,8 @@
     "sukka_china_ip": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3900,
-      "bytes": 92370
+      "parsed_rules": 3901,
+      "bytes": 92394
     },
     "sukka_china_ip6": {
       "status": "ok",
@@ -837,8 +837,8 @@
     "china-ip": {
       "active": "sukka",
       "non_ip": 1,
-      "ip": 7300,
-      "total": 7301
+      "ip": 7301,
+      "total": 7302
     },
     "wechat": {
       "active": "rulego",
