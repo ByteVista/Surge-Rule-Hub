@@ -1357,6 +1357,22 @@
           ]
         }
       }
+    },
+    {
+      "id": "tello",
+      "name": "Tello Mobile",
+      "policy": "United States",
+      "order": 69,
+      "active": "official-manual",
+      "candidates": {
+        "official-manual": {
+          "sources": [
+            {
+              "id": "official_tello"
+            }
+          ]
+        }
+      }
     }
   ]
 }

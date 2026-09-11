@@ -584,6 +584,14 @@
         "DOMAIN,snapi.live.net",
         "DOMAIN,skydrive.live.com"
       ]
+    },
+    {
+      "id": "official_tello",
+      "format": "manual",
+      "upstream": "Tello Mobile official: https://tello.com/ (verified 2026-09-11; website and subdomains)",
+      "rules": [
+        "DOMAIN-SUFFIX,tello.com"
+      ]
     }
   ]
 }
