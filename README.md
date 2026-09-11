@@ -134,7 +134,7 @@ Do not edit the embedded rule block in `docs/index.html` manually; it is overwri
 
 > 本区域由 GitHub Actions 自动刷新，唯一内容来源是 `dist/RuleSnippet.conf`。请不要手动编辑本区域。
 
-> 最后构建：`2026-09-11T11:45:24Z` · 来源 Commit：[`0696686`](https://github.com/ByteVista/Surge-Rule-Hub/commit/06966864d0707fe673755d0136d636e865876983) · [Actions Run #34595515026](https://github.com/ByteVista/Surge-Rule-Hub/actions/runs/34595515026)
+> 最后构建：`2026-09-11T15:12:41Z` · 来源 Commit：[`023e11f`](https://github.com/ByteVista/Surge-Rule-Hub/commit/023e11fc775215dbefe0bcfc637ff63b8c27557e) · [Actions Run #34614678693](https://github.com/ByteVista/Surge-Rule-Hub/actions/runs/34614678693)
 
 GitHub 代码块右上角可直接复制；也可打开 [`docs/RuleSnippet.conf`](docs/RuleSnippet.conf) 查看纯文本。
 
@@ -182,6 +182,8 @@ RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/youtube.non_ip.list,St
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/google.non_ip.list,Google,extended-matching
 # > AI [sukka]
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/ai.non_ip.list,AI,extended-matching
+# > Tello Mobile [official-manual]
+RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/tello.non_ip.list,United States,extended-matching
 # > US Banks [fusion]
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/us-banks.non_ip.list,United States,extended-matching
 # > Payments US [fusion]

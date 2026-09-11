@@ -486,6 +486,12 @@
       "format": "manual",
       "parsed_rules": 6,
       "bytes": 139
+    },
+    "official_tello": {
+      "status": "ok",
+      "format": "manual",
+      "parsed_rules": 1,
+      "bytes": 24
     }
   },
   "active_sources": [
@@ -510,6 +516,7 @@
     "manual_ifast",
     "official_google_drive",
     "official_onedrive",
+    "official_tello",
     "rulego_stream_cn",
     "rulego_wechat",
     "rulego_youtube",
@@ -863,6 +870,12 @@
       "non_ip": 27,
       "ip": 0,
       "total": 27
+    },
+    "tello": {
+      "active": "official-manual",
+      "non_ip": 1,
+      "ip": 0,
+      "total": 1
     }
   }
 }
