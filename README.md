@@ -134,7 +134,7 @@ Do not edit the embedded rule block in `docs/index.html` manually; it is overwri
 
 > 本区域由 GitHub Actions 自动刷新，唯一内容来源是 `dist/RuleSnippet.conf`。请不要手动编辑本区域。
 
-> 最后构建：`2026-09-13T05:19:43Z` · 来源 Commit：[`051f053`](https://github.com/ByteVista/Surge-Rule-Hub/commit/051f053e5f8f2afacc47d33b9f4c8e83f4c4fe2b) · [Actions Run #34739990130](https://github.com/ByteVista/Surge-Rule-Hub/actions/runs/34739990130)
+> 最后构建：`2026-09-13T11:37:09Z` · 来源 Commit：[`6578e19`](https://github.com/ByteVista/Surge-Rule-Hub/commit/6578e19b8cbde11c1f5da26ee72b887842d732ed) · [Actions Run #34754891098](https://github.com/ByteVista/Surge-Rule-Hub/actions/runs/34754891098)
 
 GitHub 代码块右上角可直接复制；也可打开 [`docs/RuleSnippet.conf`](docs/RuleSnippet.conf) 查看纯文本。
 
@@ -182,6 +182,8 @@ RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/youtube.non_ip.list,St
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/google.non_ip.list,Google,extended-matching
 # > AI [sukka]
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/ai.non_ip.list,AI,extended-matching
+# > HSBC UK [v2fly-uk]
+RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/hsbc-uk.non_ip.list,United Kingdom,extended-matching
 # > Tello Mobile [official-manual]
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/tello.non_ip.list,United States,extended-matching
 # > US Banks [fusion]

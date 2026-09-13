@@ -28,8 +28,8 @@
     "sukka_cdn_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 4656,
-      "bytes": 89202
+      "parsed_rules": 4662,
+      "bytes": 89329
     },
     "sukka_cdn_non_ip": {
       "status": "ok",
@@ -142,8 +142,8 @@
     "sukka_china_ip6": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3462,
-      "bytes": 89358
+      "parsed_rules": 3460,
+      "bytes": 89302
     },
     "elysian_apple_update": {
       "status": "ok",
@@ -492,6 +492,12 @@
       "format": "manual",
       "parsed_rules": 1,
       "bytes": 24
+    },
+    "v2_hsbc": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 48,
+      "bytes": 693
     }
   },
   "active_sources": [
@@ -549,6 +555,7 @@
     "v2_epicgames",
     "v2_futu",
     "v2_google",
+    "v2_hsbc",
     "v2_ibkr",
     "v2_kraken",
     "v2_n26",
@@ -591,9 +598,9 @@
     },
     "cdn": {
       "active": "sukka",
-      "non_ip": 4739,
+      "non_ip": 4745,
       "ip": 0,
-      "total": 4739
+      "total": 4745
     },
     "apple-private-relay": {
       "active": "sukka",
@@ -844,8 +851,8 @@
     "china-ip": {
       "active": "sukka",
       "non_ip": 1,
-      "ip": 7362,
-      "total": 7363
+      "ip": 7360,
+      "total": 7361
     },
     "wechat": {
       "active": "rulego",
@@ -876,6 +883,12 @@
       "non_ip": 1,
       "ip": 0,
       "total": 1
+    },
+    "hsbc-uk": {
+      "active": "v2fly-uk",
+      "non_ip": 2,
+      "ip": 0,
+      "total": 2
     }
   }
 }
