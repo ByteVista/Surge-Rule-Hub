@@ -1373,6 +1373,28 @@
           ]
         }
       }
+    },
+    {
+      "id": "hsbc-uk",
+      "name": "HSBC UK",
+      "policy": "United Kingdom",
+      "order": 68,
+      "active": "v2fly-uk",
+      "candidates": {
+        "v2fly-uk": {
+          "sources": [
+            {
+              "id": "v2_hsbc",
+              "filter": {
+                "allow_domain_roots": [
+                  "hsbc.co.uk",
+                  "hsbc.uk"
+                ]
+              }
+            }
+          ]
+        }
+      }
     }
   ]
 }

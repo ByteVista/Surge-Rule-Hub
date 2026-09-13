@@ -592,6 +592,12 @@
       "rules": [
         "DOMAIN-SUFFIX,tello.com"
       ]
+    },
+    {
+      "id": "v2_hsbc",
+      "format": "v2fly",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/hsbc",
+      "upstream": "v2fly/domain-list-community"
     }
   ]
 }
