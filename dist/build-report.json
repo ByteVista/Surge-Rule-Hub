@@ -22,8 +22,8 @@
     "sukka_speedtest_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 3385,
-      "bytes": 87014
+      "parsed_rules": 3386,
+      "bytes": 87041
     },
     "sukka_cdn_domainset": {
       "status": "ok",
@@ -592,9 +592,9 @@
     },
     "speedtest": {
       "active": "sukka",
-      "non_ip": 3384,
+      "non_ip": 3385,
       "ip": 0,
-      "total": 3384
+      "total": 3385
     },
     "cdn": {
       "active": "sukka",
