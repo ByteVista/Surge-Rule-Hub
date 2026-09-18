@@ -22,14 +22,14 @@
     "sukka_speedtest_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 3387,
-      "bytes": 87062
+      "parsed_rules": 3392,
+      "bytes": 87215
     },
     "sukka_cdn_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 4662,
-      "bytes": 89329
+      "parsed_rules": 4665,
+      "bytes": 89383
     },
     "sukka_cdn_non_ip": {
       "status": "ok",
@@ -100,8 +100,8 @@
     "sukka_download_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 1968,
-      "bytes": 45703
+      "parsed_rules": 1969,
+      "bytes": 45717
     },
     "sukka_download_non_ip": {
       "status": "ok",
@@ -118,8 +118,8 @@
     "sukka_domestic": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 869,
-      "bytes": 22632
+      "parsed_rules": 870,
+      "bytes": 22661
     },
     "sukka_direct": {
       "status": "ok",
@@ -137,13 +137,13 @@
       "status": "ok",
       "format": "surge",
       "parsed_rules": 3901,
-      "bytes": 92394
+      "bytes": 92391
     },
     "sukka_china_ip6": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3469,
-      "bytes": 89558
+      "parsed_rules": 3412,
+      "bytes": 88007
     },
     "elysian_apple_update": {
       "status": "ok",
@@ -592,15 +592,15 @@
     },
     "speedtest": {
       "active": "sukka",
-      "non_ip": 3386,
+      "non_ip": 3391,
       "ip": 0,
-      "total": 3386
+      "total": 3391
     },
     "cdn": {
       "active": "sukka",
-      "non_ip": 4745,
+      "non_ip": 4748,
       "ip": 0,
-      "total": 4745
+      "total": 4748
     },
     "apple-private-relay": {
       "active": "sukka",
@@ -826,9 +826,9 @@
     },
     "download": {
       "active": "sukka",
-      "non_ip": 1978,
+      "non_ip": 1979,
       "ip": 0,
-      "total": 1978
+      "total": 1979
     },
     "global-proxy": {
       "active": "sukka",
@@ -838,9 +838,9 @@
     },
     "domestic": {
       "active": "sukka",
-      "non_ip": 869,
+      "non_ip": 870,
       "ip": 2,
-      "total": 871
+      "total": 872
     },
     "direct": {
       "active": "sukka",
@@ -851,8 +851,8 @@
     "china-ip": {
       "active": "sukka",
       "non_ip": 1,
-      "ip": 7368,
-      "total": 7369
+      "ip": 7311,
+      "total": 7312
     },
     "wechat": {
       "active": "rulego",
