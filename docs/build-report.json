@@ -28,8 +28,8 @@
     "sukka_cdn_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 4666,
-      "bytes": 89397
+      "parsed_rules": 4672,
+      "bytes": 89523
     },
     "sukka_cdn_non_ip": {
       "status": "ok",
@@ -220,7 +220,7 @@
     "v2_google": {
       "status": "ok",
       "format": "v2fly",
-      "parsed_rules": 934,
+      "parsed_rules": 939,
       "bytes": 12516
     },
     "v2_twitter": {
@@ -598,9 +598,9 @@
     },
     "cdn": {
       "active": "sukka",
-      "non_ip": 4749,
+      "non_ip": 4755,
       "ip": 0,
-      "total": 4749
+      "total": 4755
     },
     "apple-private-relay": {
       "active": "sukka",
@@ -652,9 +652,9 @@
     },
     "google": {
       "active": "v2fly",
-      "non_ip": 934,
+      "non_ip": 939,
       "ip": 0,
-      "total": 934
+      "total": 939
     },
     "ai": {
       "active": "sukka",
