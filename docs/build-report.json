@@ -4,8 +4,8 @@
     "awa_ads": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 952,
-      "bytes": 26847
+      "parsed_rules": 963,
+      "bytes": 27135
     },
     "sukka_reject_no_drop": {
       "status": "ok",
@@ -574,9 +574,9 @@
   "services": {
     "ads": {
       "active": "awa",
-      "non_ip": 952,
+      "non_ip": 963,
       "ip": 0,
-      "total": 952
+      "total": 963
     },
     "reject-no-drop": {
       "active": "sukka",
