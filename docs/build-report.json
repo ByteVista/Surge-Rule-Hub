@@ -4,8 +4,8 @@
     "awa_ads": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 963,
-      "bytes": 27135
+      "parsed_rules": 965,
+      "bytes": 27191
     },
     "sukka_reject_no_drop": {
       "status": "ok",
@@ -136,8 +136,8 @@
     "sukka_china_ip": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3903,
-      "bytes": 92439
+      "parsed_rules": 3905,
+      "bytes": 92484
     },
     "sukka_china_ip6": {
       "status": "ok",
@@ -574,9 +574,9 @@
   "services": {
     "ads": {
       "active": "awa",
-      "non_ip": 963,
+      "non_ip": 965,
       "ip": 0,
-      "total": 963
+      "total": 965
     },
     "reject-no-drop": {
       "active": "sukka",
@@ -851,8 +851,8 @@
     "china-ip": {
       "active": "sukka",
       "non_ip": 1,
-      "ip": 7308,
-      "total": 7309
+      "ip": 7310,
+      "total": 7311
     },
     "wechat": {
       "active": "rulego",
