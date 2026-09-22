@@ -118,8 +118,8 @@
     "sukka_domestic": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 870,
-      "bytes": 22661
+      "parsed_rules": 871,
+      "bytes": 22685
     },
     "sukka_direct": {
       "status": "ok",
@@ -838,9 +838,9 @@
     },
     "domestic": {
       "active": "sukka",
-      "non_ip": 870,
+      "non_ip": 871,
       "ip": 2,
-      "total": 872
+      "total": 873
     },
     "direct": {
       "active": "sukka",
