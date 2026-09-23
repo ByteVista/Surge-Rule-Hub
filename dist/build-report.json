@@ -28,8 +28,8 @@
     "sukka_cdn_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 4674,
-      "bytes": 89564
+      "parsed_rules": 4675,
+      "bytes": 89581
     },
     "sukka_cdn_non_ip": {
       "status": "ok",
@@ -598,9 +598,9 @@
     },
     "cdn": {
       "active": "sukka",
-      "non_ip": 4757,
+      "non_ip": 4758,
       "ip": 0,
-      "total": 4757
+      "total": 4758
     },
     "apple-private-relay": {
       "active": "sukka",
