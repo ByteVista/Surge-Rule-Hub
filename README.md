@@ -134,7 +134,7 @@ Do not edit the embedded rule block in `docs/index.html` manually; it is overwri
 
 > 本区域由 GitHub Actions 自动刷新，唯一内容来源是 `dist/RuleSnippet.conf`。请不要手动编辑本区域。
 
-> 最后构建：`2026-09-25T21:47:53Z` · 来源 Commit：[`abf1715`](https://github.com/ByteVista/Surge-Rule-Hub/commit/abf1715d2f2676f08449cf505133941d3ad98742) · [Actions Run #36193435131](https://github.com/ByteVista/Surge-Rule-Hub/actions/runs/36193435131)
+> 最后构建：`2026-09-26T05:23:53Z` · 来源 Commit：[`8b72a5e`](https://github.com/ByteVista/Surge-Rule-Hub/commit/8b72a5ec5f4f4007c71480773c82a2d923d5a6bc) · [Actions Run #36220659731](https://github.com/ByteVista/Surge-Rule-Hub/actions/runs/36220659731)
 
 GitHub 代码块右上角可直接复制；也可打开 [`docs/RuleSnippet.conf`](docs/RuleSnippet.conf) 查看纯文本。
 
