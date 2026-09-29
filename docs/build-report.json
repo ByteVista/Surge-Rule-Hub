@@ -22,8 +22,8 @@
     "sukka_speedtest_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 3407,
-      "bytes": 87582
+      "parsed_rules": 3408,
+      "bytes": 87614
     },
     "sukka_cdn_domainset": {
       "status": "ok",
@@ -143,7 +143,7 @@
       "status": "ok",
       "format": "surge",
       "parsed_rules": 3415,
-      "bytes": 88086
+      "bytes": 88084
     },
     "elysian_apple_update": {
       "status": "ok",
@@ -220,7 +220,7 @@
     "v2_google": {
       "status": "ok",
       "format": "v2fly",
-      "parsed_rules": 939,
+      "parsed_rules": 942,
       "bytes": 12516
     },
     "v2_twitter": {
@@ -592,9 +592,9 @@
     },
     "speedtest": {
       "active": "sukka",
-      "non_ip": 3406,
+      "non_ip": 3407,
       "ip": 0,
-      "total": 3406
+      "total": 3407
     },
     "cdn": {
       "active": "sukka",
@@ -652,9 +652,9 @@
     },
     "google": {
       "active": "v2fly",
-      "non_ip": 939,
+      "non_ip": 942,
       "ip": 0,
-      "total": 939
+      "total": 942
     },
     "ai": {
       "active": "sukka",
