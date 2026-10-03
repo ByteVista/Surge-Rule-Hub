@@ -64,8 +64,8 @@
     "sukka_ai": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 52,
-      "bytes": 2010
+      "parsed_rules": 53,
+      "bytes": 2032
     },
     "sukka_telegram_non_ip": {
       "status": "ok",
@@ -658,9 +658,9 @@
     },
     "ai": {
       "active": "sukka",
-      "non_ip": 52,
+      "non_ip": 53,
       "ip": 0,
-      "total": 52
+      "total": 53
     },
     "us-banks": {
       "active": "fusion",
