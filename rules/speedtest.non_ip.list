@@ -279,6 +279,7 @@ DOMAIN,teste.i9va.net.br
 DOMAIN,tnookla.tn.edu.tw
 DOMAIN,two.speed.airc.it
 DOMAIN,vitesse.cogeco.ca
+DOMAIN,wrlcc.synology.me
 DOMAIN,www.librespeed.fi
 DOMAIN,ch1.chtm.hinet.net
 DOMAIN,ds19.vipconnect.mx
@@ -513,6 +514,7 @@ DOMAIN,speedtest.netcup.at
 DOMAIN,speedtest.netone.nl
 DOMAIN,speedtest.newsxs.nl
 DOMAIN,speedtest.nocix.net
+DOMAIN,speedtest.nwlab.org
 DOMAIN-SUFFIX,speedtest.orange.fr
 DOMAIN-SUFFIX,speedtest.orange.pl
 DOMAIN,speedtest.osage.net
@@ -1687,6 +1689,7 @@ DOMAIN,speedtest.cadence.net.uk
 DOMAIN,speedtest.chisholmbb.com
 DOMAIN,speedtest.citytelecom.ru
 DOMAIN,speedtest.connectzone.in
+DOMAIN,speedtest.dacomfibra.com
 DOMAIN,speedtest.datafex.com.tr
 DOMAIN,speedtest.del.excitel.in
 DOMAIN,speedtest.deltacable.com
@@ -2448,9 +2451,11 @@ DOMAIN,gh-speedtest.homeplus.net.tw
 DOMAIN,hk-bgp-speedtest.nearoute.io
 DOMAIN,hmc-speedtest.northstate.net
 DOMAIN,iad-eqx10-ookla-1.99.network
+DOMAIN,imrteixeira.brsserver.com.br
 DOMAIN,kl-speedtest.homeplus.net.tw
 DOMAIN,koreaspeedtest.cmctelecom.vn
 DOMAIN,ks-speedtest.homeplus.net.tw
+DOMAIN,kzspeedtest01.aunalytics.com
 DOMAIN,ldc01-speedtest.whipcord.com
 DOMAIN,lg-speedtest.homeplus.net.tw
 DOMAIN,lifitelecom.brsserver.com.br
