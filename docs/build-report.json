@@ -28,14 +28,14 @@
     "sukka_cdn_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 4681,
-      "bytes": 89698
+      "parsed_rules": 4685,
+      "bytes": 89789
     },
     "sukka_cdn_non_ip": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 84,
-      "bytes": 3447
+      "parsed_rules": 85,
+      "bytes": 3489
     },
     "sukka_icloud_private_relay": {
       "status": "ok",
@@ -100,8 +100,8 @@
     "sukka_download_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 1971,
-      "bytes": 45748
+      "parsed_rules": 1972,
+      "bytes": 45768
     },
     "sukka_download_non_ip": {
       "status": "ok",
@@ -112,8 +112,8 @@
     "sukka_global": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 1272,
-      "bytes": 33289
+      "parsed_rules": 1275,
+      "bytes": 33374
     },
     "sukka_domestic": {
       "status": "ok",
@@ -142,8 +142,8 @@
     "sukka_china_ip6": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3447,
-      "bytes": 88970
+      "parsed_rules": 3468,
+      "bytes": 89536
     },
     "elysian_apple_update": {
       "status": "ok",
@@ -598,9 +598,9 @@
     },
     "cdn": {
       "active": "sukka",
-      "non_ip": 4764,
+      "non_ip": 4769,
       "ip": 0,
-      "total": 4764
+      "total": 4769
     },
     "apple-private-relay": {
       "active": "sukka",
@@ -826,15 +826,15 @@
     },
     "download": {
       "active": "sukka",
-      "non_ip": 1981,
+      "non_ip": 1982,
       "ip": 0,
-      "total": 1981
+      "total": 1982
     },
     "global-proxy": {
       "active": "sukka",
-      "non_ip": 1272,
+      "non_ip": 1275,
       "ip": 0,
-      "total": 1272
+      "total": 1275
     },
     "domestic": {
       "active": "sukka",
@@ -851,8 +851,8 @@
     "china-ip": {
       "active": "sukka",
       "non_ip": 1,
-      "ip": 7349,
-      "total": 7350
+      "ip": 7370,
+      "total": 7371
     },
     "wechat": {
       "active": "rulego",
