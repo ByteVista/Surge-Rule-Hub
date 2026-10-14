@@ -498,6 +498,12 @@
       "format": "v2fly",
       "parsed_rules": 48,
       "bytes": 693
+    },
+    "official_sofi": {
+      "status": "ok",
+      "format": "manual",
+      "parsed_rules": 1,
+      "bytes": 23
     }
   },
   "active_sources": [
@@ -522,6 +528,7 @@
     "manual_ifast",
     "official_google_drive",
     "official_onedrive",
+    "official_sofi",
     "official_tello",
     "rulego_stream_cn",
     "rulego_wechat",
@@ -664,9 +671,9 @@
     },
     "us-banks": {
       "active": "fusion",
-      "non_ip": 85,
+      "non_ip": 86,
       "ip": 0,
-      "total": 85
+      "total": 86
     },
     "payments-us": {
       "active": "fusion",
@@ -889,6 +896,12 @@
       "non_ip": 2,
       "ip": 0,
       "total": 2
+    },
+    "hsbc-hk": {
+      "active": "v2fly-hk",
+      "non_ip": 1,
+      "ip": 0,
+      "total": 1
     }
   }
 }
