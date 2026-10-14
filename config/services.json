@@ -357,7 +357,15 @@
         "fusion": {
           "merge": [
             "accademia",
-            "sarkrui-clean"
+            "sarkrui-clean",
+            "official-sofi"
+          ]
+        },
+        "official-sofi": {
+          "sources": [
+            {
+              "id": "official_sofi"
+            }
           ]
         }
       }
@@ -1389,6 +1397,27 @@
                 "allow_domain_roots": [
                   "hsbc.co.uk",
                   "hsbc.uk"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hsbc-hk",
+      "name": "HSBC HK",
+      "policy": "DIRECT",
+      "order": 26,
+      "active": "v2fly-hk",
+      "candidates": {
+        "v2fly-hk": {
+          "sources": [
+            {
+              "id": "v2_hsbc",
+              "filter": {
+                "allow_domain_roots": [
+                  "hsbc.com.hk"
                 ]
               }
             }

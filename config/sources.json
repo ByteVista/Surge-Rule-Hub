@@ -598,6 +598,14 @@
       "format": "v2fly",
       "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/hsbc",
       "upstream": "v2fly/domain-list-community"
+    },
+    {
+      "id": "official_sofi",
+      "format": "manual",
+      "upstream": "SoFi official: https://www.sofi.com/ (verified 2026-10-14; US website, login and support subdomains)",
+      "rules": [
+        "DOMAIN-SUFFIX,sofi.com"
+      ]
     }
   ]
 }
