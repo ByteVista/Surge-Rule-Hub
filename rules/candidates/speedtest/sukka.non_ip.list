@@ -84,6 +84,7 @@ DOMAIN,st.ruinet.work
 DOMAIN,st1.ligtel.com
 DOMAIN,str.seyfert.in
 DOMAIN,test.intred.it
+DOMAIN,de.riospeed.com
 DOMAIN,istanbul.sth.tr
 DOMAIN,ld1.vayutel.net
 DOMAIN,lg-ffm.aeza.net
@@ -2665,6 +2666,10 @@ DOMAIN,miaspeedtest.blackburn-pr.com
 DOMAIN,mum-speedtest.sanghviinfo.com
 DOMAIN,netservice01.ber01.lwlcom.net
 DOMAIN,ntp-speedtest.homeplus.net.tw
+DOMAIN,ookla-dc3.services.proxad.net
+DOMAIN,ookla-dc5.services.proxad.net
+DOMAIN,ookla-lyo.services.proxad.net
+DOMAIN,ookla-mrs.services.proxad.net
 DOMAIN,ookla-toronto.aerioncloud.com
 DOMAIN,sea-speedtest.net.sangoma.net
 DOMAIN,sgp-speedtest.limtechlabs.top
@@ -3182,6 +3187,7 @@ DOMAIN,velocidade.netshowtelecom.com.br
 DOMAIN,velocidade.phinfortelecom.com.br
 DOMAIN,velocidade.webzoomtelecom.com.br
 DOMAIN,velocimetro.speednetworks.com.br
+DOMAIN,yyc-speedtest.xeronetworks.co.uk
 DOMAIN,btlr-speedtest-02.brightspeed.com
 DOMAIN,buft-speedtest-02.brightspeed.com
 DOMAIN,chvl-speedtest-02.brightspeed.com
