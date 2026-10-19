@@ -2772,6 +2772,7 @@ DOMAIN,upload.teftera.com
 DOMAIN,uploads.guim.co.uk
 DOMAIN,uploads.linear.app
 DOMAIN,v2uploads.zopim.io
+DOMAIN,vcc-assets.8x8.com
 DOMAIN,vector.hereapi.com
 DOMAIN,video3.mingpao.com
 DOMAIN,videos.elephas.app
@@ -2999,6 +3000,7 @@ DOMAIN,media.karousell.com
 DOMAIN,media.newyorker.com
 DOMAIN,media.shopimind.com
 DOMAIN-SUFFIX,media.strapiapp.com
+DOMAIN,media.trekbikes.com
 DOMAIN,medium-media.vgm.io
 DOMAIN-SUFFIX,motherlessmedia.com
 DOMAIN-SUFFIX,msftconnecttest.com
@@ -3500,6 +3502,7 @@ DOMAIN-SUFFIX,fimfiction-static.net
 DOMAIN,font-public.canva.com
 DOMAIN-SUFFIX,framerusercontent.com
 DOMAIN,front-resource.fs.com
+DOMAIN,frontend2.locally.com
 DOMAIN-SUFFIX,gateway.serph.network
 DOMAIN-SUFFIX,githubusercontent.com
 DOMAIN,gitpkg-fork.vercel.sh
