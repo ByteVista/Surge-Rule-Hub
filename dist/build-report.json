@@ -430,8 +430,8 @@
     "v2_steam": {
       "status": "ok",
       "format": "v2fly",
-      "parsed_rules": 43,
-      "bytes": 1674
+      "parsed_rules": 44,
+      "bytes": 1688
     },
     "v2_epicgames": {
       "status": "ok",
@@ -773,9 +773,9 @@
     },
     "steam": {
       "active": "v2fly",
-      "non_ip": 43,
+      "non_ip": 44,
       "ip": 0,
-      "total": 43
+      "total": 44
     },
     "wifi-calling-us": {
       "active": "henry",
