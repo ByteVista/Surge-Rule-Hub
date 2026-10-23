@@ -25,6 +25,12 @@
       "parsed_rules": 3450,
       "bytes": 88690
     },
+    "v2_discord": {
+      "status": "ok",
+      "format": "v2fly",
+      "parsed_rules": 28,
+      "bytes": 528
+    },
     "sukka_cdn_domainset": {
       "status": "ok",
       "format": "domainset",
@@ -559,6 +565,7 @@
     "sukka_telegram_non_ip",
     "v2_binance",
     "v2_bybit",
+    "v2_discord",
     "v2_epicgames",
     "v2_futu",
     "v2_google",
@@ -602,6 +609,12 @@
       "non_ip": 3449,
       "ip": 0,
       "total": 3449
+    },
+    "discord": {
+      "active": "v2fly",
+      "non_ip": 28,
+      "ip": 0,
+      "total": 28
     },
     "cdn": {
       "active": "sukka",

@@ -134,7 +134,7 @@ Do not edit the embedded rule block in `docs/index.html` manually; it is overwri
 
 > 本区域由 GitHub Actions 自动刷新，唯一内容来源是 `dist/RuleSnippet.conf`。请不要手动编辑本区域。
 
-> 最后构建：`2026-10-23T05:17:00Z` · 来源 Commit：[`cc01ab9`](https://github.com/ByteVista/Surge-Rule-Hub/commit/cc01ab987a892442bf5fdf737db3a8a06e22f6b0) · [Actions Run #39904868265](https://github.com/ByteVista/Surge-Rule-Hub/actions/runs/39904868265)
+> 最后构建：`2026-10-23T05:50:46Z` · 来源 Commit：[`ac9c6ec`](https://github.com/ByteVista/Surge-Rule-Hub/commit/ac9c6ec54e397e93c5e38b347f39d8737ca53f39) · [Actions Run #39907995023](https://github.com/ByteVista/Surge-Rule-Hub/actions/runs/39907995023)
 
 GitHub 代码块右上角可直接复制；也可打开 [`docs/RuleSnippet.conf`](docs/RuleSnippet.conf) 查看纯文本。
 
@@ -152,6 +152,8 @@ RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/reject-no-drop.non_ip.
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/reject-drop.non_ip.list,REJECT-DROP,extended-matching
 # > Speedtest [sukka]
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/speedtest.non_ip.list,SpeedTest,extended-matching
+# > Discord [v2fly]
+RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/discord.non_ip.list,Proxy,extended-matching
 # > HSBC HK [v2fly-hk]
 RULE-SET,https://ByteVista.github.io/Surge-Rule-Hub/rules/hsbc-hk.non_ip.list,DIRECT,extended-matching
 # > OneDrive [curated-fusion]
