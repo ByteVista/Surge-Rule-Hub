@@ -25,6 +25,12 @@
       "upstream": "SukkaW/Surge"
     },
     {
+      "id": "v2_discord",
+      "format": "v2fly",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/discord",
+      "upstream": "v2fly/domain-list-community"
+    },
+    {
       "id": "sukka_cdn_domainset",
       "format": "domainset",
       "url": "https://ruleset.skk.moe/List/domainset/cdn.conf",

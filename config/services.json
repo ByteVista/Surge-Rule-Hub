@@ -66,6 +66,22 @@
       }
     },
     {
+      "id": "discord",
+      "name": "Discord",
+      "policy": "Proxy",
+      "order": 25,
+      "active": "v2fly",
+      "candidates": {
+        "v2fly": {
+          "sources": [
+            {
+              "id": "v2_discord"
+            }
+          ]
+        }
+      }
+    },
+    {
       "id": "cdn",
       "name": "Static CDN",
       "policy": "Proxy",
