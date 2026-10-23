@@ -22,8 +22,8 @@
     "sukka_speedtest_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 3450,
-      "bytes": 88690
+      "parsed_rules": 3452,
+      "bytes": 88757
     },
     "v2_discord": {
       "status": "ok",
@@ -394,8 +394,8 @@
     "bm_steam": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 54,
-      "bytes": 2055
+      "parsed_rules": 69,
+      "bytes": 2571
     },
     "wifi_calling_us": {
       "status": "ok",
@@ -606,9 +606,9 @@
     },
     "speedtest": {
       "active": "sukka",
-      "non_ip": 3449,
+      "non_ip": 3451,
       "ip": 0,
-      "total": 3449
+      "total": 3451
     },
     "discord": {
       "active": "v2fly",
