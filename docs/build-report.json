@@ -34,14 +34,14 @@
     "sukka_cdn_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 4699,
-      "bytes": 90076
+      "parsed_rules": 4706,
+      "bytes": 90233
     },
     "sukka_cdn_non_ip": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 85,
-      "bytes": 3489
+      "parsed_rules": 86,
+      "bytes": 3534
     },
     "sukka_icloud_private_relay": {
       "status": "ok",
@@ -142,8 +142,8 @@
     "sukka_china_ip": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3884,
-      "bytes": 91948
+      "parsed_rules": 3888,
+      "bytes": 92040
     },
     "sukka_china_ip6": {
       "status": "ok",
@@ -618,9 +618,9 @@
     },
     "cdn": {
       "active": "sukka",
-      "non_ip": 4783,
+      "non_ip": 4791,
       "ip": 0,
-      "total": 4783
+      "total": 4791
     },
     "apple-private-relay": {
       "active": "sukka",
@@ -871,8 +871,8 @@
     "china-ip": {
       "active": "sukka",
       "non_ip": 1,
-      "ip": 7372,
-      "total": 7373
+      "ip": 7376,
+      "total": 7377
     },
     "wechat": {
       "active": "rulego",
