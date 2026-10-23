@@ -352,8 +352,8 @@
     "quixotic_crypto": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 416,
-      "bytes": 11299
+      "parsed_rules": 420,
+      "bytes": 11408
     },
     "lm_hoyoverse": {
       "status": "ok",
