@@ -22,8 +22,8 @@
     "sukka_speedtest_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 3456,
-      "bytes": 88853
+      "parsed_rules": 3457,
+      "bytes": 88885
     },
     "v2_discord": {
       "status": "ok",
@@ -606,9 +606,9 @@
     },
     "speedtest": {
       "active": "sukka",
-      "non_ip": 3455,
+      "non_ip": 3456,
       "ip": 0,
-      "total": 3455
+      "total": 3456
     },
     "discord": {
       "active": "v2fly",
