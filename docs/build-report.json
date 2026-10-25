@@ -34,8 +34,8 @@
     "sukka_cdn_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 4711,
-      "bytes": 90333
+      "parsed_rules": 4696,
+      "bytes": 90069
     },
     "sukka_cdn_non_ip": {
       "status": "ok",
@@ -106,8 +106,8 @@
     "sukka_download_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 1972,
-      "bytes": 45768
+      "parsed_rules": 1969,
+      "bytes": 45710
     },
     "sukka_download_non_ip": {
       "status": "ok",
@@ -142,8 +142,8 @@
     "sukka_china_ip": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3888,
-      "bytes": 92040
+      "parsed_rules": 3887,
+      "bytes": 92016
     },
     "sukka_china_ip6": {
       "status": "ok",
@@ -618,9 +618,9 @@
     },
     "cdn": {
       "active": "sukka",
-      "non_ip": 4796,
+      "non_ip": 4781,
       "ip": 0,
-      "total": 4796
+      "total": 4781
     },
     "apple-private-relay": {
       "active": "sukka",
@@ -846,9 +846,9 @@
     },
     "download": {
       "active": "sukka",
-      "non_ip": 1982,
+      "non_ip": 1979,
       "ip": 0,
-      "total": 1982
+      "total": 1979
     },
     "global-proxy": {
       "active": "sukka",
@@ -871,8 +871,8 @@
     "china-ip": {
       "active": "sukka",
       "non_ip": 1,
-      "ip": 7375,
-      "total": 7376
+      "ip": 7374,
+      "total": 7375
     },
     "wechat": {
       "active": "rulego",
