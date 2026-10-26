@@ -142,14 +142,14 @@
     "sukka_china_ip": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3887,
-      "bytes": 92016
+      "parsed_rules": 3888,
+      "bytes": 92039
     },
     "sukka_china_ip6": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3489,
-      "bytes": 90113
+      "parsed_rules": 3490,
+      "bytes": 90141
     },
     "elysian_apple_update": {
       "status": "ok",
@@ -226,7 +226,7 @@
     "v2_google": {
       "status": "ok",
       "format": "v2fly",
-      "parsed_rules": 942,
+      "parsed_rules": 945,
       "bytes": 12516
     },
     "v2_twitter": {
@@ -245,13 +245,13 @@
       "status": "ok",
       "format": "v2fly",
       "parsed_rules": 25,
-      "bytes": 676
+      "bytes": 671
     },
     "v2_paypal": {
       "status": "ok",
       "format": "v2fly",
       "parsed_rules": 233,
-      "bytes": 4320
+      "bytes": 4331
     },
     "v2_wise": {
       "status": "ok",
@@ -672,9 +672,9 @@
     },
     "google": {
       "active": "v2fly",
-      "non_ip": 942,
+      "non_ip": 945,
       "ip": 0,
-      "total": 942
+      "total": 945
     },
     "ai": {
       "active": "sukka",
@@ -871,8 +871,8 @@
     "china-ip": {
       "active": "sukka",
       "non_ip": 1,
-      "ip": 7374,
-      "total": 7375
+      "ip": 7376,
+      "total": 7377
     },
     "wechat": {
       "active": "rulego",
