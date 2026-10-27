@@ -148,8 +148,8 @@
     "sukka_china_ip6": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3490,
-      "bytes": 90141
+      "parsed_rules": 3498,
+      "bytes": 90369
     },
     "elysian_apple_update": {
       "status": "ok",
@@ -871,8 +871,8 @@
     "china-ip": {
       "active": "sukka",
       "non_ip": 1,
-      "ip": 7377,
-      "total": 7378
+      "ip": 7385,
+      "total": 7386
     },
     "wechat": {
       "active": "rulego",
