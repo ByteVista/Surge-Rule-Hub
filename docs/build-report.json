@@ -22,8 +22,8 @@
     "sukka_speedtest_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 3460,
-      "bytes": 88961
+      "parsed_rules": 3462,
+      "bytes": 89025
     },
     "v2_discord": {
       "status": "ok",
@@ -34,8 +34,8 @@
     "sukka_cdn_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 4696,
-      "bytes": 90069
+      "parsed_rules": 4698,
+      "bytes": 90090
     },
     "sukka_cdn_non_ip": {
       "status": "ok",
@@ -142,8 +142,8 @@
     "sukka_china_ip": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3889,
-      "bytes": 92064
+      "parsed_rules": 3895,
+      "bytes": 92205
     },
     "sukka_china_ip6": {
       "status": "ok",
@@ -606,9 +606,9 @@
     },
     "speedtest": {
       "active": "sukka",
-      "non_ip": 3459,
+      "non_ip": 3461,
       "ip": 0,
-      "total": 3459
+      "total": 3461
     },
     "discord": {
       "active": "v2fly",
@@ -618,9 +618,9 @@
     },
     "cdn": {
       "active": "sukka",
-      "non_ip": 4781,
+      "non_ip": 4783,
       "ip": 0,
-      "total": 4781
+      "total": 4783
     },
     "apple-private-relay": {
       "active": "sukka",
@@ -871,8 +871,8 @@
     "china-ip": {
       "active": "sukka",
       "non_ip": 1,
-      "ip": 7384,
-      "total": 7385
+      "ip": 7390,
+      "total": 7391
     },
     "wechat": {
       "active": "rulego",
