@@ -118,8 +118,8 @@
     "sukka_global": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 1276,
-      "bytes": 33399
+      "parsed_rules": 1277,
+      "bytes": 33422
     },
     "sukka_domestic": {
       "status": "ok",
@@ -142,14 +142,14 @@
     "sukka_china_ip": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3894,
-      "bytes": 92179
+      "parsed_rules": 3892,
+      "bytes": 92132
     },
     "sukka_china_ip6": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3496,
-      "bytes": 90313
+      "parsed_rules": 3476,
+      "bytes": 89774
     },
     "elysian_apple_update": {
       "status": "ok",
@@ -852,9 +852,9 @@
     },
     "global-proxy": {
       "active": "sukka",
-      "non_ip": 1276,
+      "non_ip": 1277,
       "ip": 0,
-      "total": 1276
+      "total": 1277
     },
     "domestic": {
       "active": "sukka",
@@ -871,8 +871,8 @@
     "china-ip": {
       "active": "sukka",
       "non_ip": 1,
-      "ip": 7388,
-      "total": 7389
+      "ip": 7366,
+      "total": 7367
     },
     "wechat": {
       "active": "rulego",
