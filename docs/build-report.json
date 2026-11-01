@@ -16,8 +16,8 @@
     "sukka_reject_drop": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 29,
-      "bytes": 1360
+      "parsed_rules": 31,
+      "bytes": 1410
     },
     "sukka_speedtest_domainset": {
       "status": "ok",
@@ -142,14 +142,14 @@
     "sukka_china_ip": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3894,
-      "bytes": 92178
+      "parsed_rules": 3895,
+      "bytes": 92202
     },
     "sukka_china_ip6": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3478,
-      "bytes": 89826
+      "parsed_rules": 3480,
+      "bytes": 89880
     },
     "elysian_apple_update": {
       "status": "ok",
@@ -600,9 +600,9 @@
     },
     "reject-drop": {
       "active": "sukka",
-      "non_ip": 29,
+      "non_ip": 31,
       "ip": 0,
-      "total": 29
+      "total": 31
     },
     "speedtest": {
       "active": "sukka",
@@ -871,8 +871,8 @@
     "china-ip": {
       "active": "sukka",
       "non_ip": 1,
-      "ip": 7370,
-      "total": 7371
+      "ip": 7373,
+      "total": 7374
     },
     "wechat": {
       "active": "rulego",
