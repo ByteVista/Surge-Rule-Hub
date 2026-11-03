@@ -22,8 +22,8 @@
     "sukka_speedtest_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 3465,
-      "bytes": 89092
+      "parsed_rules": 3467,
+      "bytes": 89149
     },
     "v2_discord": {
       "status": "ok",
@@ -142,8 +142,8 @@
     "sukka_china_ip": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3894,
-      "bytes": 92176
+      "parsed_rules": 3893,
+      "bytes": 92156
     },
     "sukka_china_ip6": {
       "status": "ok",
@@ -606,9 +606,9 @@
     },
     "speedtest": {
       "active": "sukka",
-      "non_ip": 3464,
+      "non_ip": 3466,
       "ip": 0,
-      "total": 3464
+      "total": 3466
     },
     "discord": {
       "active": "v2fly",
@@ -871,8 +871,8 @@
     "china-ip": {
       "active": "sukka",
       "non_ip": 1,
-      "ip": 7372,
-      "total": 7373
+      "ip": 7371,
+      "total": 7372
     },
     "wechat": {
       "active": "rulego",
