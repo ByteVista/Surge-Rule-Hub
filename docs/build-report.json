@@ -16,8 +16,8 @@
     "sukka_reject_drop": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 31,
-      "bytes": 1410
+      "parsed_rules": 32,
+      "bytes": 1443
     },
     "sukka_speedtest_domainset": {
       "status": "ok",
@@ -34,8 +34,8 @@
     "sukka_cdn_domainset": {
       "status": "ok",
       "format": "domainset",
-      "parsed_rules": 4698,
-      "bytes": 90090
+      "parsed_rules": 4699,
+      "bytes": 90124
     },
     "sukka_cdn_non_ip": {
       "status": "ok",
@@ -142,14 +142,14 @@
     "sukka_china_ip": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3890,
-      "bytes": 92079
+      "parsed_rules": 3887,
+      "bytes": 92009
     },
     "sukka_china_ip6": {
       "status": "ok",
       "format": "surge",
-      "parsed_rules": 3455,
-      "bytes": 89187
+      "parsed_rules": 3458,
+      "bytes": 89268
     },
     "elysian_apple_update": {
       "status": "ok",
@@ -600,9 +600,9 @@
     },
     "reject-drop": {
       "active": "sukka",
-      "non_ip": 31,
+      "non_ip": 32,
       "ip": 0,
-      "total": 31
+      "total": 32
     },
     "speedtest": {
       "active": "sukka",
@@ -618,9 +618,9 @@
     },
     "cdn": {
       "active": "sukka",
-      "non_ip": 4783,
+      "non_ip": 4784,
       "ip": 0,
-      "total": 4783
+      "total": 4784
     },
     "apple-private-relay": {
       "active": "sukka",
