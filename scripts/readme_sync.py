@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Keep README's generated Surge [Rule] block in sync with dist/RuleSnippet.conf."""
+"""Keep README's generated Surge configuration in sync with Final-Recommended.conf."""
 import datetime
 import os
 import re
@@ -36,11 +36,11 @@ def render_block(snippet: str) -> str:
     meta = build_metadata()
     return (
         f'{START}\n'
-        '## 最新 Surge `[Rule]` 配置（Actions 自动更新）\n\n'
+        '## 最新 Surge 推荐配置（Actions 自动更新）\n\n'
         '> 本区域由 GitHub Actions 自动刷新，唯一内容来源是 '
-        '`dist/RuleSnippet.conf`。请不要手动编辑本区域。\n\n'
+        '`dist/Final-Recommended.conf`，包含 `[General]` 和 `[Rule]`。请不要手动编辑本区域。\n\n'
         + '> ' + ' · '.join(meta) + '\n\n'
-        'GitHub 代码块右上角可直接复制；也可打开 [`docs/RuleSnippet.conf`](docs/RuleSnippet.conf) 查看纯文本。\n\n'
+        'GitHub 代码块右上角可直接复制；也可打开 [`dist/Final-Recommended.conf`](dist/Final-Recommended.conf) 查看文件。\n\n'
         '```ini\n'
         + snippet + '\n'
         '```\n'
@@ -75,10 +75,10 @@ def extract_block_snippet(readme_text: str) -> str | None:
 
 
 def sync_readme(root: Path = ROOT) -> None:
-    snippet_path = root / 'dist' / 'RuleSnippet.conf'
+    snippet_path = root / 'dist' / 'Final-Recommended.conf'
     readme_path = root / 'README.md'
     if not snippet_path.exists():
-        raise FileNotFoundError(f'missing canonical snippet: {snippet_path}')
+        raise FileNotFoundError(f'missing final configuration: {snippet_path}')
     snippet = snippet_path.read_text(encoding='utf-8')
     original = readme_path.read_text(encoding='utf-8') if readme_path.exists() else '# Surge Rule Hub\n'
     updated = replace_block(original, snippet)
@@ -87,4 +87,4 @@ def sync_readme(root: Path = ROOT) -> None:
 
 if __name__ == '__main__':
     sync_readme()
-    print('README synced from dist/RuleSnippet.conf')
+    print('README synced from dist/Final-Recommended.conf')

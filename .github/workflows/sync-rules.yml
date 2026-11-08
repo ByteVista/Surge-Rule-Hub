@@ -16,16 +16,14 @@ on:
 permissions:
   contents: write
   actions: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: surge-rule-hub-pages
+  group: surge-rule-hub-sync
   cancel-in-progress: true
 
 jobs:
   build:
-    name: Sync rules and build Pages
+    name: Sync rules and README
     runs-on: ubuntu-latest
     steps:
       - name: Checkout current main
@@ -241,7 +239,7 @@ jobs:
 
       - name: Build canonical Surge outputs
         env:
-          PUBLIC_BASE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          PUBLIC_BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/main
         shell: bash
         run: |
           set -euo pipefail
@@ -266,7 +264,7 @@ jobs:
           wc -l -c dist/RuleSnippet.conf
           sed -n '1,24p' dist/RuleSnippet.conf
 
-      - name: Sync README from canonical RuleSnippet.conf
+      - name: Sync README from Final-Recommended.conf
         run: |
           set -euo pipefail
           python3 scripts/readme_sync.py
@@ -300,23 +298,3 @@ jobs:
           else
             echo "No generated changes to commit."
           fi
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v6
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: docs
-
-  deploy:
-    name: Deploy GitHub Pages
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5

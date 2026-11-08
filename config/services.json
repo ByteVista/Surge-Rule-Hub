@@ -1,5 +1,5 @@
 {
-  "default_public_base_url": "https://<GITHUB_USER>.github.io/<REPO>",
+  "default_public_base_url": "https://raw.githubusercontent.com/ByteVista/Surge-Rule-Hub/main",
   "services": [
     {
       "id": "ads",

@@ -35,7 +35,13 @@ else:
     if '[Rule]' not in canonical:
         errors.append('RuleSnippet.conf invalid: [Rule] missing')
     if '<GITHUB_USER>' in canonical or '<REPO>' in canonical:
-        errors.append('RuleSnippet.conf still contains placeholder Pages URL; PUBLIC_BASE_URL was not resolved')
+        errors.append('RuleSnippet.conf still contains a placeholder URL; PUBLIC_BASE_URL was not resolved')
+    base = json.loads((ROOT / 'config' / 'services.json').read_text(encoding='utf-8'))['default_public_base_url']
+    for line in canonical.splitlines():
+        if line.startswith('RULE-SET,http'):
+            url = line.split(',')[1]
+            if not url.startswith(base.rstrip('/') + '/rules/'):
+                errors.append(f'RuleSnippet.conf uses an unexpected rule URL: {url}')
     if 'PRE-ACTION LOCAL BUILD' in canonical or 'WAITING_FOR_FIRST_SUCCESSFUL_ACTIONS_BUILD' in canonical:
         errors.append('RuleSnippet.conf contains pre-build placeholder content')
 
@@ -67,19 +73,34 @@ else:
         elif state.get('format') != 'surge-profile' and state.get('parsed_rules', 0) == 0:
             errors.append(f'active source fetched but parsed zero rules: {sid}')
 
-# README must expose the exact canonical file generated in this run.
+# The final configuration must combine the General preset and canonical rules.
+final_path = ROOT / 'dist' / 'Final-Recommended.conf'
+final = None
+if not final_path.exists():
+    errors.append('dist/Final-Recommended.conf missing')
+else:
+    final = normalize_text(final_path.read_text(encoding='utf-8'))
+    general_path = ROOT / 'dist' / 'General-Recommended.conf'
+    if not general_path.exists():
+        errors.append('dist/General-Recommended.conf missing')
+    elif canonical is not None:
+        expected = normalize_text(general_path.read_text(encoding='utf-8') + '\n' + canonical)
+        if final != expected:
+            errors.append('Final-Recommended.conf does not match General-Recommended.conf + RuleSnippet.conf')
+
+# README must expose the complete final configuration generated in this run.
 readme = ROOT / 'README.md'
 if not readme.exists():
     errors.append('README.md missing')
-elif canonical is not None:
+elif final is not None:
     embedded = extract_block_snippet(readme.read_text(encoding='utf-8'))
     if embedded is None:
         errors.append('README generated Surge rule markers/code block missing')
-    elif embedded != canonical:
-        errors.append('README Surge rule block does not match dist/RuleSnippet.conf')
+    elif embedded != final:
+        errors.append('README Surge configuration does not match dist/Final-Recommended.conf')
         diff = list(difflib.unified_diff(
-            canonical.splitlines(), embedded.splitlines(),
-            fromfile='dist/RuleSnippet.conf', tofile='README embedded block', lineterm=''
+            final.splitlines(), embedded.splitlines(),
+            fromfile='dist/Final-Recommended.conf', tofile='README embedded block', lineterm=''
         ))
         if diff:
             errors.append('First README diff:\n' + '\n'.join(diff[:20]))
@@ -95,4 +116,4 @@ if canonical is not None:
 if errors:
     print('\n\n'.join(errors), file=sys.stderr)
     raise SystemExit(1)
-print(f'OK: {len(services)} services structurally verified; README/docs match canonical RuleSnippet.conf')
+print(f'OK: {len(services)} services verified; Raw rule URLs and complete README configuration verified')
