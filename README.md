@@ -195,7 +195,7 @@ FINAL,Final,dns-failed
 
 ## 自动更新
 
-GitHub Actions 每 6 小时同步上游，也可在 [Actions](https://github.com/ByteVista/Surge-Rule-Hub/actions/workflows/sync-rules.yml) 手动运行。每次构建依次恢复并校验固定构建器、抓取上游、转换和去重、生成配置、同步 README、校验并提交生成物，不再部署 Pages。
+GitHub Actions 每周一 08:37（新加坡时间，UTC+8）同步上游，也可在 [Actions](https://github.com/ByteVista/Surge-Rule-Hub/actions/workflows/sync-rules.yml) 手动运行。每次构建依次恢复并校验固定构建器、抓取上游、转换和去重、生成配置、同步 README、校验并提交生成物，不再部署 Pages。
 
 抓取失败时使用上一次成功的 `mirror/`；没有可用镜像或启用服务解析为空时，构建失败并保留原有生成物。所有远程非 IP 规则排在 IP / ASN 规则之前，专项服务排在通用规则之前。
 

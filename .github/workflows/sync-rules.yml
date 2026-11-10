@@ -3,7 +3,8 @@ name: Sync and Build Surge Rules
 on:
   workflow_dispatch:
   schedule:
-    - cron: '37 */6 * * *'
+    # Every Monday at 08:37 Asia/Singapore (00:37 UTC).
+    - cron: '37 0 * * 1'
   push:
     branches:
       - main
