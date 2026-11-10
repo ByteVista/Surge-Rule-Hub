@@ -21,7 +21,7 @@
 
 > 本区域由 GitHub Actions 自动刷新，唯一内容来源是 `dist/Final-Recommended.conf`，包含 `[General]` 和 `[Rule]`。请不要手动编辑本区域。
 
-> 最后构建：`2026-11-09T22:39:55Z` · 来源 Commit：[`a414ed5`](https://github.com/ByteVista/Surge-Rule-Hub/commit/a414ed5291a01439734a0be892b01ea9928f2b7a) · [Actions Run #42713834173](https://github.com/ByteVista/Surge-Rule-Hub/actions/runs/42713834173)
+> 最后构建：`2026-11-10T06:05:13Z` · 来源 Commit：[`d5d4300`](https://github.com/ByteVista/Surge-Rule-Hub/commit/d5d4300c6316bac6106c14fb75e0a590d383425e) · [Actions Run #42766107763](https://github.com/ByteVista/Surge-Rule-Hub/actions/runs/42766107763)
 
 GitHub 代码块右上角可直接复制；也可打开 [`dist/Final-Recommended.conf`](dist/Final-Recommended.conf) 查看文件。
 
